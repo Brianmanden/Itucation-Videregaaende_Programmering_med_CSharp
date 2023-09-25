@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.NetworkInformation;
 
 namespace FirstProject
 {
@@ -80,6 +81,28 @@ namespace FirstProject
             Console.WriteLine(famous_person2.TrimStart());
             Console.WriteLine(famous_person2.TrimEnd());
             Console.WriteLine(famous_person2.Trim());
+            Console.WriteLine(Environment.NewLine);
+
+            //---Exercise 3---
+            //a.Write addition, subtraction, multiplication, and division that each result in the number 26.
+            //   Print four lines to show the results.
+            Console.WriteLine(14+12);
+            Console.WriteLine(28-2);
+            Console.WriteLine(2*13);
+            Console.WriteLine(52/2);
+            Console.WriteLine(Environment.NewLine);
+
+            //b.Use a variable to represent your favourite number.
+            //   Then, using that variable, create a message that reveals your favourite number - print it!
+            int theAnswer = 42;
+            Console.WriteLine($"Answer to the Ultimate Question of Life, The Universe, and Everything: {theAnswer}");
+            Console.WriteLine(Environment.NewLine);
+
+            //c.One kilometer is approximately 0.62 miles.
+            //   Use a variable to represent your daily travel distance in kilometers.
+            //   Write code to print your daily travel distance in miles.
+            double distInKm = 0.01;
+            Console.WriteLine($"Distance in miles: {0.62 * distInKm}");
             Console.WriteLine(Environment.NewLine);
         }
     }
