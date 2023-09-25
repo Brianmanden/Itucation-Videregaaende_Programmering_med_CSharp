@@ -8,26 +8,41 @@ namespace FirstProject
     {
         static void Main(string[] args)
         {
-            int x = 19;
-            Console.WriteLine(x);
+            #region TMP
 
-            string name = "* Brian *";
-            Console.WriteLine(name);
+            //int x = 19;
+            //Console.WriteLine(x);
 
-            string y = "12";
-            x = 14;
+            //string name = "* Brian *";
+            //Console.WriteLine(name);
 
-            Console.WriteLine(x+y);
-            Console.WriteLine(int.Parse(y) + x);
+            //string y = "12";
+            //x = 14;
 
-            AnsiConsole.Write(
-                new FigletText("Output:")
-                        .LeftJustified()
-                        .Color(Color.Green)
-                );
-            AnsiConsole.MarkupLine("[red]Name: [/]" + name);
+            //Console.WriteLine(x+y);
+            //Console.WriteLine(int.Parse(y) + x);
 
-            Console.ReadKey();
+            //AnsiConsole.Write(
+            //    new FigletText("Output:")
+            //            .LeftJustified()
+            //            .Color(Color.Green)
+            //    );
+            //AnsiConsole.MarkupLine("[red]Name: [/]" + name);
+
+            //Console.ReadKey();
+            #endregion
+
+            //---Exercise 1---
+            //a.Assign a message to a variable and then print that message.
+            string message = "some message";
+            Console.WriteLine(message);
+
+            //b.Assign a message to a variable, and print that message.
+            //Then change the value of the variable to a new message, and print the new message.
+            string someOtherMessage = "other message";
+            Console.WriteLine(someOtherMessage);
+            someOtherMessage = "new message";
+            Console.WriteLine(someOtherMessage);
         }
     }
 }
