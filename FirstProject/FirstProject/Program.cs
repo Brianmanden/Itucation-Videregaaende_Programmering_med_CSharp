@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net.NetworkInformation;
 
 namespace FirstProject
 {
@@ -7,30 +6,6 @@ namespace FirstProject
     {
         static void Main(string[] args)
         {
-            #region TMP
-
-            //int x = 19;
-            //Console.WriteLine(x);
-
-            //string name = "* Brian *";
-            //Console.WriteLine(name);
-
-            //string y = "12";
-            //x = 14;
-
-            //Console.WriteLine(x+y);
-            //Console.WriteLine(int.Parse(y) + x);
-
-            //AnsiConsole.Write(
-            //    new FigletText("Output:")
-            //            .LeftJustified()
-            //            .Color(Color.Green)
-            //    );
-            //AnsiConsole.MarkupLine("[red]Name: [/]" + name);
-
-            //Console.ReadKey();
-            #endregion
-
             //---Exercise 1---
             //a.Assign a message to a variable and then print that message.
             string message = "some message";
