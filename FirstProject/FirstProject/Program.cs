@@ -79,6 +79,8 @@ namespace FirstProject
             double distInKm = 0.01;
             Console.WriteLine($"Distance in miles: {0.62 * distInKm}");
             Console.WriteLine(Environment.NewLine);
+
+            Console.ReadLine();
         }
     }
 }
