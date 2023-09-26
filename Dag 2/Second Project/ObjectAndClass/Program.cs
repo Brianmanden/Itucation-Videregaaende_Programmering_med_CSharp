@@ -107,7 +107,50 @@ s2.GetTotalScore();
 s2.GetAverageScore();
 
 Console.WriteLine($"Test information for {s2.Name}. Total score: {s2.GetTotalScore()} - Average score: {s2.GetAverageScore()}");
+Console.WriteLine(Environment.NewLine);
 
+#endregion
+
+#region Exercise 5
+
+Console.WriteLine("Bank account");
+
+// Open new bank account
+BankAccount account = new BankAccount();
+account.FirstName = "Scrooge";
+account.LastName = "McDuck";
+Console.WriteLine($"New account for: {account.FirstName} {account.LastName}");
+Console.WriteLine(Environment.NewLine);
+
+decimal someAmount = new decimal(123.45);
+Console.WriteLine($"Inserting: {someAmount}");
+account.InsertAmount(someAmount);
+Console.WriteLine($"Current balance: {account.GetBalance()}");
+Console.WriteLine(Environment.NewLine);
+
+decimal someOtherAmount = new decimal(77.45);
+Console.WriteLine($"Inserting: {someOtherAmount}");
+account.InsertAmount(someOtherAmount);
+Console.WriteLine($"Current balance: {account.GetBalance()}");
+Console.WriteLine(Environment.NewLine);
+
+decimal partyMoney1 = new decimal(125.50);
+Console.WriteLine($"Withdrawing: {partyMoney1}");
+account.WithdrawAmount(partyMoney1);
+Console.WriteLine($"Current balance: {account.GetBalance()}");
+Console.WriteLine(Environment.NewLine);
+
+decimal partyMoney2 = new decimal(125.50);
+Console.WriteLine($"Withdrawing: {partyMoney2}");
+account.WithdrawAmount(partyMoney2);
+Console.WriteLine($"Current balance: {account.GetBalance()}");
+Console.WriteLine(Environment.NewLine);
+
+decimal partyMoney3 = new decimal(125.50);
+Console.WriteLine($"Withdrawing: {partyMoney3}");
+account.WithdrawAmount(partyMoney3);
+Console.WriteLine($"Current balance: {account.GetBalance()}");
+Console.WriteLine(Environment.NewLine);
 
 #endregion
 
