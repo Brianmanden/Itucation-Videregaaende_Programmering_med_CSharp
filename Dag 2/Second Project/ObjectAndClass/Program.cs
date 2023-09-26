@@ -84,4 +84,31 @@ Console.WriteLine(Environment.NewLine);
 
 #endregion
 
+#region Exercise 4
+
+Console.WriteLine("Students");
+
+Student s1 = new Student();
+s1.Name = "Jonna";
+s1.AddTest(4);
+s1.AddTest(7);
+s1.AddTest(2);
+s1.AddTest(10);
+s1.GetTotalScore();
+
+Console.WriteLine($"Test information for {s1.Name}. Total score: {s1.GetTotalScore()} - Average score: { s1.GetAverageScore()}");
+
+Student s2 = new Student();
+s2.Name = "Ejner";
+s2.AddTest(3);
+s2.AddTest(3);
+s2.AddTest(1);
+s2.GetTotalScore();
+s2.GetAverageScore();
+
+Console.WriteLine($"Test information for {s2.Name}. Total score: {s2.GetTotalScore()} - Average score: {s2.GetAverageScore()}");
+
+
+#endregion
+
 Console.WriteLine();
