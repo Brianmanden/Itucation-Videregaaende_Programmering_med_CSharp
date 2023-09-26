@@ -7,7 +7,7 @@
     //- Implement a 'Roll()' method, which returns a random integer(1 - 6)
     //hint: The Random class is very helpful
 
-    public class Die
+    public class Dice
     {
         private IList<int> _rolls = new List<int>();
 
