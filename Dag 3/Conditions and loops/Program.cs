@@ -13,8 +13,10 @@ namespace Conditions_and_loops
             #region Exercise 1
             Console.WriteLine("List uneven numbers.");
 
-            for (int i = 0; i < 20; i++) { 
-                if (i % 2 == 1) {
+            for (int i = 0; i < 20; i++)
+            {
+                if (i % 2 == 1)
+                {
                     Console.WriteLine($"{i} is an uneven number.");
                 }
             }
@@ -68,7 +70,8 @@ namespace Conditions_and_loops
 
             int age = 0;
             int tries = 3;
-            do {
+            do
+            {
                 Console.WriteLine("What is the age of the person going to the movie theatre ?");
                 age = int.Parse(Console.ReadLine());
 
@@ -80,7 +83,8 @@ namespace Conditions_and_loops
                 {
                     Console.WriteLine("Ticket price is: 10$");
                 }
-                else { 
+                else
+                {
                     Console.WriteLine("Ticket price is: 15$");
                 }
 
@@ -91,6 +95,101 @@ namespace Conditions_and_loops
             Console.WriteLine(Environment.NewLine);
             #endregion
 
+            //---Exercise 4---
+
+            #region Exercise 4
+
+            //a.Write a loop that prompts the user to enter a series of pizza toppings until they break the loop.
+            //As they enter each topping, print a message saying you'll add that topping to their pizza.
+            #region a.
+            Console.WriteLine("Pizza (a)");
+
+            string topping = string.Empty;
+            Console.WriteLine("Add topping to pizza. Type 'done' when done");
+            do
+            {
+                Console.WriteLine("Which topping ?");
+                topping = Console.ReadLine();
+
+                if (topping != "done")
+                {
+                    Console.WriteLine($"Thank you. Will add {topping} to pizza.");
+                    Console.WriteLine(Environment.NewLine);
+                }
+            } while (topping != "done");
+            Console.WriteLine(Environment.NewLine);
+            #endregion
+
+            //b.Modify your pizza program to include a list of the toppings the user enters.
+            //When the loop breaks, print a message confirming their order has been saved, along with a list of their desired toppings.
+            #region b.
+            Console.WriteLine("Pizza (b)");
+
+            string toppingB = string.Empty;
+            List<string> toppingsList = new List<string>();
+            Console.WriteLine("Add topping to pizza. Type 'done' when done");
+            do
+            {
+                Console.WriteLine("Which topping (b) ?");
+                toppingB = Console.ReadLine();
+
+                if (toppingB != "done")
+                {
+                    Console.WriteLine($"Thank you. Will add {toppingB} to pizza.");
+                    toppingsList.Add(toppingB);
+                    Console.WriteLine(Environment.NewLine);
+                }
+            } while (toppingB != "done");
+            Console.WriteLine("Thank you for your pizza (b) order.");
+            Console.WriteLine("You have chosen the following toppings:");
+            foreach (string pizzatopping in toppingsList)
+            {
+                Console.WriteLine($"* {pizzatopping}");
+            }
+            Console.WriteLine(Environment.NewLine);
+
+            #endregion
+
+            //c.Before adding a topping to the list of desired toppings, check whether the topping is already added.
+            //Tell the user that that topping already exists in their order.
+            #region c.
+            Console.WriteLine("Pizza (c)");
+
+            string toppingC = string.Empty;
+            List<string> toppingsListC = new List<string>();
+            Console.WriteLine("Add topping to pizza. Type 'done' when done");
+            do
+            {
+                Console.WriteLine("Which topping (c) ?");
+                toppingC = Console.ReadLine()!;
+
+                if (toppingC != "done")
+                {
+                    if (toppingsListC.Contains(toppingC))
+                    {
+                        Console.WriteLine($"Toppings list already contains: {toppingC}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Thank you. Will add {toppingC} to pizza.");
+                        toppingsListC.Add(toppingC);
+                    }
+                    Console.WriteLine(Environment.NewLine);
+                }
+            } while (toppingC != "done");
+
+            Console.WriteLine("Thank you for your pizza (c) order.");
+            Console.WriteLine("You have chosen the following toppings:");
+            foreach (string pizzatopping in toppingsListC)
+            {
+                Console.WriteLine($"* {pizzatopping}");
+            }
+            Console.WriteLine(Environment.NewLine);
+            #endregion
+
+            #endregion
+
+            Console.WriteLine("End of program. Press any key.");
             Console.ReadKey();
         }
     }
