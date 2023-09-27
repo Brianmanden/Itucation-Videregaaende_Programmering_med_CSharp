@@ -1,0 +1,106 @@
+// -------------------- Exercise 1 --------------------
+public class Counter
+{
+    int value;
+
+    public Counter() 
+    {
+        value = 0;
+    }
+
+    public void Click()
+    {
+        value++;
+        Console.WriteLine(value);
+    }
+
+    public void Reset()
+    {
+        value = 0;
+        Console.WriteLine(value);
+    }
+}
+
+// -------------------- Exercise 2 --------------------
+public class Die
+{
+    Random rand = new Random();
+    public int Roll()
+    {
+        return rand.Next(1,7);
+    }
+}
+
+// -------------------- Exercise 3 --------------------
+public class Die
+{
+    int sides;
+    Random rand = new Random();
+
+    public Die(int sides) 
+    { 
+        this.sides = sides;
+    }
+
+    public int Roll()
+    {
+        // Next maxValue is exclusive
+        return rand.Next(1, sides+1);
+    }
+}
+
+// -------------------- Exercise 4 --------------------
+public class Student
+{
+    string name;
+    int totalScore;
+    int testsTaken;
+
+    public Student(string name)
+    {
+        this.name = name;
+        totalScore = 0;
+        testsTaken = 0;
+    }
+
+    public void AddTest(int score) 
+    {
+        testsTaken++;
+        totalScore += score;
+    }
+
+    public int GetTotalScore() 
+    {
+        return totalScore;
+    }
+
+    public double GetAverageScore()
+    {
+        return totalScore / testsTaken;
+    }
+}
+
+// -------------------- Exercise 5 --------------------
+public class BankAccount
+{
+    double balance;
+    public BankAccount(double initialBalance) 
+    {
+        balance = initialBalance;
+    }
+
+    public void Deposit(double amount)
+    {
+        balance += amount;
+    }
+
+    public void Withdraw(double amount)
+    {
+        balance -= amount;
+    }
+
+    public double GetBalance()
+    {
+        return balance;
+    }
+}
