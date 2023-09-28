@@ -1,8 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using System.Threading.Tasks;
-using System;
-
-namespace Conditions_and_loops
+﻿namespace Conditions_and_loops
 {
     internal class Program
     {
@@ -13,7 +9,7 @@ namespace Conditions_and_loops
             #region Exercise 1
             Console.WriteLine("List uneven numbers.");
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 1; i < 20; i++)
             {
                 if (i % 2 == 1)
                 {
@@ -96,7 +92,6 @@ namespace Conditions_and_loops
             #endregion
 
             //---Exercise 4---
-
             #region Exercise 4
 
             //a.Write a loop that prompts the user to enter a series of pizza toppings until they break the loop.
