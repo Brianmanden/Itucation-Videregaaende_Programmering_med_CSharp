@@ -2,13 +2,14 @@
 {
     public class MyLinkedList
     {
-        Node firstNode;
+        Node? firstNode;
         int count;
 
         public int Count { get => count; }
         public bool IsEmpty { get => count == 0; }
 
-        public MyLinkedList() {
+        public MyLinkedList()
+        {
             count = 0;
             firstNode = null;
         }
