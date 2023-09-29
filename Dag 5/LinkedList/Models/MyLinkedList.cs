@@ -106,6 +106,9 @@
             count--;
         }
 
+        /// <summary>
+        /// Prints the whole linked list
+        /// </summary>
         public void Print()
         {
             Node current = firstNode;
