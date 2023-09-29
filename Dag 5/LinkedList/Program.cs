@@ -43,7 +43,7 @@ namespace LinkedList
 
             Console.WriteLine(Environment.NewLine);
 
-            Console.WriteLine($"Remove node contained data: {removedNode.Data}");
+            Console.WriteLine($"Removed node contained data: {removedNode.Data}");
 
             Console.ReadKey();
         }
