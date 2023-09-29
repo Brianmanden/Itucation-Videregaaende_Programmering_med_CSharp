@@ -65,6 +65,44 @@ namespace LinkedList.Models
             Add(count, data);
         }
 
+        public void RemoveAt(int index)
+        {
+            // It is not possible to remove a node at a negative index
+            if (index < 0)
+            {
+                throw new IndexOutOfRangeException($"Index is out of range. Index: {index}");
+            }
+
+            // It is not possible to remove any nodes from an empty list
+            if (IsEmpty)
+            {
+                Console.WriteLine("Nothing to remove.");
+            }
+
+            // To get started parsing the linked list - set current node to the firstNode
+            Node current = firstNode;
+
+            // If attempting to remove the first node in the linked list ...
+            if (index == 0)
+            {
+                // ... set the firstNode to the next node in the linked list = the first node is "unlinked" from list
+                firstNode = current.Next;
+            }
+            else
+            {
+                // Loop through linked list from start to the node before the one to be removed ...
+                for (int i = 0; i < index - 1; i++)
+                {
+                    // ... assuming node before one to be removed is reached ...
+                    current = current.Next;
+                }
+                // ... with node before node to be removed, skip the one to be removed and splice list again
+                current.Next = current.Next.Next;
+            }
+            // A node has been removed. Adjust count accordingly.
+            count--;
+        }
+
         public void Print()
         {
             Node current = firstNode;
