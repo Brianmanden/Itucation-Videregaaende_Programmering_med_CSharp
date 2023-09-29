@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace LinkedList.Models
+﻿namespace LinkedList.Models
 {
     public class MyLinkedList
     {

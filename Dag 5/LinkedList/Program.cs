@@ -16,6 +16,7 @@ namespace LinkedList
             // This third node is inserted in between the nodes at index 0 and 1.
             linkedList.Add(1, "second");
 
+            // More nodes are consecutively added to the linked list
             linkedList.Add("fourth");
             linkedList.Add("to be removed"); // index 4
             linkedList.Add("fifth");
