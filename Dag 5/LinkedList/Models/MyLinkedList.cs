@@ -64,12 +64,14 @@
             Add(count, data);
         }
 
+
         /// <summary>
-        /// Remove node at specified index
+        /// Remove node at specified index.
         /// </summary>
-        /// <param name="index">The index where the data will be removed.</param>
-        /// <exception cref="IndexOutOfRangeException"></exception>
-        public void RemoveAt(int index)
+        /// <param name="index"></param>
+        /// <returns>The removed node</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws exception if trying to remove node with negative index</exception>
+        public Node RemoveAt(int index)
         {
             // It is not possible to remove a node at a negative index
             if (index < 0)
@@ -85,12 +87,19 @@
 
             // To get started parsing the linked list - set current node to the firstNode
             Node current = firstNode;
+            Node removedNode = null;
 
             // If attempting to remove the first node in the linked list ...
             if (index == 0)
             {
+                removedNode = current;
+
                 // ... set the firstNode to the next node in the linked list = the first node is "unlinked" from list
                 firstNode = current.Next;
+
+                // A node has been removed. Adjust count accordingly.
+                count--;
+                return removedNode;
             }
             else
             {
@@ -100,11 +109,17 @@
                     // ... assuming node before one to be removed is reached ...
                     current = current.Next;
                 }
+
+                removedNode = current.Next;
+
                 // ... with node before node to be removed, skip the one to be removed and splice list again
                 current.Next = current.Next.Next;
+                
+                // A node has been removed. Adjust count accordingly.
+                count--;
+
+                return removedNode;
             }
-            // A node has been removed. Adjust count accordingly.
-            count--;
         }
 
         /// <summary>
@@ -119,5 +134,7 @@
                 current = current.Next;
             }
         }
+
+
     }
 }

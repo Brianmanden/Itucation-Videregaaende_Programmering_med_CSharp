@@ -32,7 +32,7 @@ namespace LinkedList
             Console.WriteLine(Environment.NewLine);
 
             // remove node at index 4
-            linkedList.RemoveAt(4);
+            Node removedNode = linkedList.RemoveAt(4);
             linkedList.Print();
             // Output:
             // first
@@ -40,6 +40,10 @@ namespace LinkedList
             // third
             // fourth
             // fifth
+
+            Console.WriteLine(Environment.NewLine);
+
+            Console.WriteLine($"Remove node contained data: {removedNode.Data}");
 
             Console.ReadKey();
         }
