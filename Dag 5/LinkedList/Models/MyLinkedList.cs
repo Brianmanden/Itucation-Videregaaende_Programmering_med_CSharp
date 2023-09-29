@@ -65,6 +65,11 @@ namespace LinkedList.Models
             Add(count, data);
         }
 
+        /// <summary>
+        /// Remove node at specified index
+        /// </summary>
+        /// <param name="index">The index where the data will be removed.</param>
+        /// <exception cref="IndexOutOfRangeException"></exception>
         public void RemoveAt(int index)
         {
             // It is not possible to remove a node at a negative index
