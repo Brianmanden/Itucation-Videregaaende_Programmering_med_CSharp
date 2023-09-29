@@ -64,7 +64,6 @@
             Add(count, data);
         }
 
-
         /// <summary>
         /// Remove node at specified index.
         /// </summary>
@@ -121,6 +120,10 @@
                 return removedNode;
             }
         }
+
+        //TODO Add method SwitchNodes(Node nodeA, Node nodeB)
+
+        //TODO Add method OverwriteNodeAt(int index, object data)
 
         /// <summary>
         /// Prints the whole linked list
