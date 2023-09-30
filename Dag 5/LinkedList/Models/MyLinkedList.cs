@@ -126,8 +126,8 @@
         /// <summary>
         /// Overwrites existing node with given data.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="data"></param>
+        /// <param name="index">Index to overwrite.</param>
+        /// <param name="data">Data to overwrite with.</param>
         public void OverwriteAt(int index, object data)
         {
             if (IsEmpty)
