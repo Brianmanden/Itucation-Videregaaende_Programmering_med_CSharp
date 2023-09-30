@@ -1,4 +1,6 @@
-﻿namespace ListsAndDictionaries
+﻿using Spectre.Console;
+
+namespace ListsAndDictionaries
 {
     internal class Program
     {
@@ -99,6 +101,66 @@
             #endregion
 
             Console.WriteLine(Environment.NewLine);
+
+            //---Exercise 3: Dictionaries---
+            #region Exercise 3
+            //a.Use a dictionary to store information about a person you know.
+            //You decide the information, but classics include first name, age, and showers per week.
+            //Print a little message about your friend, using the stored information.
+
+            Dictionary<string, int> friendsDict = new Dictionary<string, int>();
+            friendsDict.Add("Anna", 3);
+            friendsDict.Add("Bob", 2);
+            friendsDict.Add("Charlie", 4);
+            friendsDict.Add("Devin", 1);
+
+            foreach (var friend in friendsDict)
+            {
+                Console.WriteLine($"{friend.Key}... said 'Hello' to the world {friend.Value} times this week.");
+            }
+
+            Console.WriteLine(Environment.NewLine);
+
+            //b.Use a dictionary to store the names of a few people you know, along with their favourite numbers.
+            //Print some of the people in your dictionary, along with their favourite number.
+            Dictionary<string, int> knownPeople = new Dictionary<string, int>();
+            knownPeople.Add("Penton", 5);
+            knownPeople.Add("Beast", 666);
+            knownPeople.Add("Douglas", 42);
+
+            Console.WriteLine($"Favorite number of {knownPeople.ElementAt(1).Key} is {knownPeople.ElementAt(1).Value}");
+            Console.WriteLine($"Favorite number of {knownPeople.ElementAt(2).Key} is {knownPeople.ElementAt(2).Value}");
+
+            Console.WriteLine(Environment.NewLine);
+
+            //c.Let's use a dictionary as an actual dictionary (or you could call it a glossary to avoid confusion).
+            //Think of five programming words you've learned about, and store them along with their meanings.
+            //Print these words and their meanings as a neatly formatted output.
+
+            Dictionary<string, string> glossary = new Dictionary<string, string>();
+            glossary.Add("Variable", "A named container for a value.");
+            glossary.Add("Integer", "The representation of a whole number.");
+            glossary.Add("Array", "A simple list for a set of values.");
+            glossary.Add("List", "A list for a set of values. List has methods attached to it.");
+            glossary.Add("LinkedList", "A list of nodes. Each node knows about the next node (if any) in line - hence linked list.");
+
+            var table = new Table();
+            table.Border = TableBorder.HeavyHead;
+            table.BorderColor(Color.Green);
+
+            table.AddColumn("[deepskyblue1]Term[/]");
+            table.AddColumn(new TableColumn("[deepskyblue2]Meaning[/]"));
+
+            foreach (var term in glossary)
+            {
+                table.AddRow($"[white]{term.Key}[/]", term.Value);
+            }
+
+            AnsiConsole.Write(table);
+
+            Console.WriteLine(Environment.NewLine);
+
+            #endregion
 
             Console.ReadKey();
         }
