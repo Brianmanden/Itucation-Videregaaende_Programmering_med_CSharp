@@ -121,6 +121,30 @@
             }
         }
 
+        public Node GetNodeAt(int index)
+        {
+            if (index < 0) {
+                throw new IndexOutOfRangeException($"Can not get node at a negative index. Index: {index}");
+            }
+            if (IsEmpty) {
+                Console.WriteLine("Can not get node from an empty list.");
+            }
+            if (index > count - 1) {
+                throw new IndexOutOfRangeException($"Can not get node at a an higher index than count minus 1. Index: {index}. Count: {count}.");
+            }
+
+            int internalCount = 0;
+
+            Node current = firstNode;
+
+            while (internalCount < index)
+            {
+                current = current.Next;
+                internalCount++;
+            }
+            return current;
+        }
+
         //TODO Add method SwitchNodes(Node nodeA, Node nodeB)
 
         /// <summary>

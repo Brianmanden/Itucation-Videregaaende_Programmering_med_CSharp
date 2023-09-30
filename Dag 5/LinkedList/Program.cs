@@ -106,6 +106,11 @@ namespace LinkedList
 
             Console.WriteLine(Environment.NewLine);
 
+            Console.WriteLine("Using method GetNodeAt to fetch node at index 2.");
+            Console.WriteLine($"Data for node at index 2: {linkedList.GetNodeAt(2).Data}");
+
+            Console.WriteLine(Environment.NewLine);
+
             Console.ReadKey();
         }
     }
