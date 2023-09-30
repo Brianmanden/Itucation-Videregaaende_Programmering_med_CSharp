@@ -123,7 +123,25 @@
 
         //TODO Add method SwitchNodes(Node nodeA, Node nodeB)
 
-        //TODO Add method OverwriteNodeAt(int index, object data)
+        /// <summary>
+        /// Overwrites existing node with given data.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="data"></param>
+        public void OverwriteAt(int index, object data)
+        {
+            if (IsEmpty)
+            {
+                Console.WriteLine("Nothing to overwrite in an empty list.");
+            }
+            if (index < 0 || index > count - 1)
+            {
+                throw new IndexOutOfRangeException($"Index is out of range. Index: {index}");
+            }
+
+            RemoveAt(index);
+            Add(index, data);
+        }
 
         /// <summary>
         /// Moves node from sourceIndex to destionationIndex

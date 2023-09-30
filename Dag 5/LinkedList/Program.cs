@@ -92,6 +92,20 @@ namespace LinkedList
 
             Console.WriteLine(Environment.NewLine);
 
+            Console.WriteLine("Overwriting index 2 ('third') with '3rd'");
+            linkedList.OverwriteAt(2, "3rd");
+            linkedList.Print();
+            // Output:
+            // first
+            // second
+            // 3rd
+            // fourth
+            // fifth
+            // sixth
+            // seventh
+
+            Console.WriteLine(Environment.NewLine);
+
             Console.ReadKey();
         }
     }
