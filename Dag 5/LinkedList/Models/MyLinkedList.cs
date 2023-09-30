@@ -125,7 +125,17 @@
 
         //TODO Add method OverwriteNodeAt(int index, object data)
 
+        /// <summary>
+        /// Moves node from sourceIndex to destionationIndex
+        /// </summary>
+        /// <param name="sourceIndex">Index to move from.</param>
+        /// <param name="destinationIndex">Index to move to.</param>
+        /// <exception cref="IndexOutOfRangeException">Throws an exception if using parameters out of bound.</exception>
         public void MoveTo(int sourceIndex, int destinationIndex) {
+            if (IsEmpty)
+            {
+                Console.WriteLine("Nothing to move in an empty list.");
+            }
             if (sourceIndex == destinationIndex)
             {
                 Console.WriteLine("Source and destination is the same. No operation needed. Exiting.");
