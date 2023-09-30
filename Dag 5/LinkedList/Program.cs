@@ -111,6 +111,20 @@ namespace LinkedList
 
             Console.WriteLine(Environment.NewLine);
 
+            Console.WriteLine("Switching nodes at indices 0 and 6");
+            linkedList.SwitchNodes(0, 6);
+            linkedList.Print();
+            // Output:
+            // seventh
+            // second
+            // 3rd
+            // fourth
+            // fifth
+            // sixth
+            // first
+
+            Console.WriteLine(Environment.NewLine);
+
             Console.ReadKey();
         }
     }

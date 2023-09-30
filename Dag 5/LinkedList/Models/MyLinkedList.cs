@@ -121,6 +121,12 @@
             }
         }
 
+        /// <summary>
+        /// Get the node at the given index.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>Node at the given index.</returns>
+        /// <exception cref="IndexOutOfRangeException">Throws an exception when trying to get a node out of bound.</exception>
         public Node GetNodeAt(int index)
         {
             if (index < 0) {
@@ -145,7 +151,41 @@
             return current;
         }
 
-        //TODO Add method SwitchNodes(Node nodeA, Node nodeB)
+        /// <summary>
+        /// Switches the data between to given nodes.
+        /// </summary>
+        /// <param name="indexA">Index of Node A</param>
+        /// <param name="indexB">Index of Node B</param>
+        /// <exception cref="IndexOutOfRangeException">Throws an exception when trying to get nodes out of bound.</exception>
+        public void SwitchNodes(int indexA, int indexB)
+        {
+            if (indexA < 0)
+            {
+                throw new IndexOutOfRangeException($"Can not get a node at negative index. IndexA: {indexA}");
+            }
+            if (indexB < 0)
+            {
+                throw new IndexOutOfRangeException($"Can not get a node at negative index. IndexB: {indexB}");
+            }
+            if (IsEmpty)
+            {
+                Console.WriteLine("Can not get node from an empty list.");
+            }
+            if (indexA > count - 1)
+            {
+                throw new IndexOutOfRangeException($"Can not get node at a an higher index than count minus 1. IndexA: {indexA}. Count: {count}.");
+            }
+            if (indexB > count - 1)
+            {
+                throw new IndexOutOfRangeException($"Can not get node at a an higher index than count minus 1. IndexB: {indexB}. Count: {count}.");
+            }
+
+            Node nodeA = GetNodeAt(indexA);
+            Node nodeB = GetNodeAt(indexB);
+
+            OverwriteAt(indexB, nodeA.Data);
+            OverwriteAt(indexA, nodeB.Data);
+        }
 
         /// <summary>
         /// Overwrites existing node with given data.
