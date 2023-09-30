@@ -131,11 +131,11 @@
                 Console.WriteLine("Source and destination is the same. No operation needed. Exiting.");
                 return;
             }
-            if (sourceIndex < 0 || sourceIndex > count) {
+            if (sourceIndex < 0 || sourceIndex > count - 1) {
                 throw new IndexOutOfRangeException($"Source index is out of range. Index: { sourceIndex}");
             }
-            if (destinationIndex < 0 || destinationIndex > count) {
-                throw new IndexOutOfRangeException($"Source index is out of range. Index: { sourceIndex}");
+            if (destinationIndex < 0 || destinationIndex > count - 1) {
+                throw new IndexOutOfRangeException($"Destination index is out of range. Index: { destinationIndex}. Count: {count}");
             }
 
             Node sourceNode = RemoveAt(sourceIndex);

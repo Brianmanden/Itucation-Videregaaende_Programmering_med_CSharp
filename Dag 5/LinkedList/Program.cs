@@ -87,6 +87,9 @@ namespace LinkedList
             // sixth
             // seventh
 
+            // this throws error because index 7 is higher than count minus 1. (count adjusted to index)
+            //linkedList.MoveTo(1, 7);
+
             Console.WriteLine(Environment.NewLine);
 
             Console.ReadKey();
