@@ -42,8 +42,34 @@ namespace LinkedList
             // fifth
 
             Console.WriteLine(Environment.NewLine);
-
             Console.WriteLine($"Removed node contained data: {removedNode.Data}");
+            Console.WriteLine(Environment.NewLine);
+
+            linkedList.Add("seventh");
+            linkedList.Add("sixth");
+            linkedList.Print();
+            // Output:
+            // first
+            // second
+            // third
+            // fourth
+            // fifth
+            // seventh
+            // sixth
+            Console.WriteLine(Environment.NewLine);
+
+            linkedList.MoveTo(6, 5);
+            linkedList.Print();
+            // Output:
+            // first
+            // second
+            // third
+            // fourth
+            // fifth
+            // sixth
+            // seventh
+
+            Console.WriteLine(Environment.NewLine);
 
             Console.ReadKey();
         }

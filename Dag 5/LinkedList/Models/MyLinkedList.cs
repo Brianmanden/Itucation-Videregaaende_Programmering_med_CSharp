@@ -125,7 +125,10 @@
 
         //TODO Add method OverwriteNodeAt(int index, object data)
 
-        //TODO Add method MoveTo(int sourceNode, int destNode)
+        public void MoveTo(int sourceIndex, int destinationIndex) {
+            Node sourceNode = RemoveAt(sourceIndex);
+            Add(destinationIndex, sourceNode.Data);
+        }
 
         /// <summary>
         /// Prints the whole linked list
@@ -139,7 +142,5 @@
                 current = current.Next;
             }
         }
-
-
     }
 }
