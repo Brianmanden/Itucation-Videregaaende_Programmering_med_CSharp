@@ -45,6 +45,7 @@ namespace LinkedList
             Console.WriteLine($"Removed node contained data: {removedNode.Data}");
             Console.WriteLine(Environment.NewLine);
 
+            Console.WriteLine("Adding two items to list. 'seventh' and 'sixth'");
             linkedList.Add("seventh");
             linkedList.Add("sixth");
             linkedList.Print();
@@ -58,7 +59,24 @@ namespace LinkedList
             // sixth
             Console.WriteLine(Environment.NewLine);
 
-            linkedList.MoveTo(6, 5);
+            // source bigger than destination
+            Console.WriteLine("Moving index 5 ('seventh') to index 1");
+            linkedList.MoveTo(5, 1);
+            linkedList.Print();
+            // Output:
+            // first
+            // seventh
+            // second
+            // third
+            // fourth
+            // fifth
+            // sixth
+
+            Console.WriteLine(Environment.NewLine);
+
+            // source smaller than destination
+            Console.WriteLine("Moving index 1 ('seventh') to index 6");
+            linkedList.MoveTo(1, 6);
             linkedList.Print();
             // Output:
             // first

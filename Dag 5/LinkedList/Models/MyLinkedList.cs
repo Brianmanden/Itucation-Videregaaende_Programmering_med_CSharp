@@ -126,6 +126,18 @@
         //TODO Add method OverwriteNodeAt(int index, object data)
 
         public void MoveTo(int sourceIndex, int destinationIndex) {
+            if (sourceIndex == destinationIndex)
+            {
+                Console.WriteLine("Source and destination is the same. No operation needed. Exiting.");
+                return;
+            }
+            if (sourceIndex < 0 || sourceIndex > count) {
+                throw new IndexOutOfRangeException($"Source index is out of range. Index: { sourceIndex}");
+            }
+            if (destinationIndex < 0 || destinationIndex > count) {
+                throw new IndexOutOfRangeException($"Source index is out of range. Index: { sourceIndex}");
+            }
+
             Node sourceNode = RemoveAt(sourceIndex);
             Add(destinationIndex, sourceNode.Data);
         }
