@@ -45,6 +45,46 @@ namespace Inheritance
                 }
             }
             #endregion
+
+            Console.WriteLine(Environment.NewLine);
+
+            //---Exercise 2---
+            //Implement a superclass Appointment and the following subclasses:
+            //Onetime, Daily, Monthly.
+            //An appointment has a description(for example: "see the dentist") and a date.
+            //Define a method AppointmentInfo that returns a description, date, and
+            //whether the appointment is daily, monthly or onetime.
+            #region Exercise 2
+
+            Onetime onetime = new Onetime {
+                Date = DateTime.Now.AddHours(2),
+                Description = "Uhh oohh... Go see the principle"
+            };
+            Console.WriteLine(onetime.AppointmentInfo());
+            Console.WriteLine(Environment.NewLine);
+
+            Daily daily = new Daily {
+                Date = DateTime.Now.AddHours(1),
+                Description = "Write program.. at least a 'Hello World'-example."
+            };
+            Console.WriteLine(daily.AppointmentInfo());
+            Console.WriteLine(Environment.NewLine);
+
+            Montly montly = new Montly
+            {
+                Date = DateTime.Now.AddHours(4),
+                Description = "Tidy up code"
+            };
+            Console.WriteLine(montly.AppointmentInfo());
+            #endregion
+
+            Console.WriteLine(Environment.NewLine);
+
+            #region Exercise 3
+
+            #endregion
+
+            Console.ReadKey();
         }
     }
 }
