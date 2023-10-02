@@ -149,7 +149,7 @@ namespace ListsAndDictionaries
             table.BorderColor(Color.Green);
 
             table.AddColumn("[deepskyblue1]Term[/]");
-            table.AddColumn(new TableColumn("[deepskyblue2]Meaning[/]"));
+            table.AddColumn(new TableColumn("[green]Meaning[/]"));
 
             foreach (var term in glossary)
             {
