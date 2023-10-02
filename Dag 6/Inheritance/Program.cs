@@ -1,5 +1,6 @@
 ﻿using Inheritance.Models;
 using System.Reflection;
+using System.Runtime.Intrinsics.X86;
 
 namespace Inheritance
 {
@@ -56,32 +57,23 @@ namespace Inheritance
             //whether the appointment is daily, monthly or onetime.
             #region Exercise 2
 
-            Onetime onetime = new Onetime {
-                Date = DateTime.Now.AddHours(2),
-                Description = "Uhh oohh... Go see the principle"
-            };
-            Console.WriteLine(onetime.AppointmentInfo());
-            Console.WriteLine(Environment.NewLine);
-
-            Daily daily = new Daily {
-                Date = DateTime.Now.AddHours(1),
-                Description = "Write program.. at least a 'Hello World'-example."
-            };
-            Console.WriteLine(daily.AppointmentInfo());
-            Console.WriteLine(Environment.NewLine);
-
-            Montly montly = new Montly
-            {
-                Date = DateTime.Now.AddHours(4),
-                Description = "Tidy up code"
-            };
-            Console.WriteLine(montly.AppointmentInfo());
+            Onetime onetime = new Onetime { Date = DateTime.Now.AddHours(2), Description = "Uhh oohh... Go see the principle"};
+            Daily daily = new Daily { Date = DateTime.Now.AddHours(1), Description = "Write program.. at least a 'Hello World'-example."};
+            Montly montly = new Montly{ Date = DateTime.Now.AddHours(4), Description = "Tidy up code" };
             #endregion
 
             Console.WriteLine(Environment.NewLine);
 
+            //---Exercise 3---
+            //Create a list of objects from Exercise 2.
+            //Use a loop to print out all your AppointmentInfo!
             #region Exercise 3
-
+            List<Appointment> appointments = new List<Appointment> { onetime, daily, montly };
+            foreach (Appointment appointment in appointments)
+            {
+                Console.WriteLine(appointment.AppointmentInfo());
+                Console.WriteLine(Environment.NewLine);
+            }
             #endregion
 
             Console.ReadKey();
