@@ -1,0 +1,65 @@
+//-------------------- Exercise 1 --------------------
+// a:
+List<string> friends = new List<string>() { "Peter", "Molle", "Felicia", "Olivia" };
+Console.WriteLine(friends[0]);
+Console.WriteLine(friends[1]);
+Console.WriteLine(friends[2]);
+Console.WriteLine(friends[3]);
+
+// b:
+List<string> dndItems = new List<string>() { "D20", "Character Sheet", "DM" };
+Console.WriteLine($"When I roll a {dndItems[0]} I always get a 1...");
+Console.WriteLine($"My current {dndItems[2]} is a big fat meanie :(");
+
+
+//-------------------- Exercise 2 --------------------
+// a:
+List<string> dinnerGuests = new List<string>() { "Rodney Mullen", "Kobe Bryant", "James Spader" };
+foreach (string guest in dinnerGuests)
+{
+    Console.WriteLine($"Greetings, {guest}! Please join my dinner party this Friday.");
+}
+
+// b:
+dinnerGuests[2] = "Robin Williams";
+Console.WriteLine($"Greetings, {dinnerGuests[2]}! Please join my dinner party this Friday.");
+
+// c:
+dinnerGuests.Add("Tim Schafer");
+dinnerGuests.Add("Dominic Armato");
+dinnerGuests.Add("Bodil Jørgensen");
+
+// d:
+dinnerGuests.Remove("Tim Schafer");
+dinnerGuests.Remove("Dominic Armato");
+dinnerGuests.Remove("Bodil Jørgensen");
+
+
+//-------------------- Exercise 3 --------------------
+// a:
+Dictionary<string, object> myFriend = new Dictionary<string, object>();
+myFriend.Add("name", "Jonas");
+myFriend.Add("age", 32);
+myFriend["weeklyShowers"] = 4;
+Console.WriteLine($"My friend {myFriend["name"]} is {myFriend["age"]} years old. He showers approximately {myFriend["weeklyShowers"]} times per week");
+
+// b:
+Dictionary<string, int> friendsNumbers = new Dictionary<string, int>();
+friendsNumbers.Add("Mor", 7);
+friendsNumbers.Add("Mark", 17);
+foreach (var friend in friendsNumbers)
+{
+    Console.WriteLine($"Name: {friend.Key}, favourite number: {friend.Value}");
+}
+
+// c:
+Dictionary<string, string> glossary = new Dictionary<string, string>();
+glossary.Add("object", "an instance of a class");
+glossary.Add("state", "the variables (identification) of an object");
+glossary.Add("behaviour", "the methods of an object");
+glossary.Add("boolean", "a certain type of data that can be either true or false");
+glossary.Add("hash set", "a collection of unique entries");
+foreach (var item in glossary)
+{
+    Console.WriteLine($"The word: {item.Key} refers to {item.Value}.");
+}
