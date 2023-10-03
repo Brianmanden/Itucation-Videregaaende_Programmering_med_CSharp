@@ -1,9 +1,5 @@
 ﻿using Inheritance.Models;
-using Microsoft.VisualBasic;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.Intrinsics.X86;
-using System.Xml.Linq;
 
 namespace Inheritance
 {
