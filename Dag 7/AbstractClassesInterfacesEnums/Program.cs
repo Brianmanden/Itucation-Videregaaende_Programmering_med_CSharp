@@ -1,8 +1,5 @@
 ﻿using AbstractClassesInterfacesEnums.Enums;
 using AbstractClassesInterfacesEnums.Models;
-using static System.Net.Mime.MediaTypeNames;
-using System.Runtime.Intrinsics.X86;
-using System;
 
 namespace AbstractClassesInterfacesEnums
 {
