@@ -2,6 +2,11 @@
 
 namespace AbstractClassesInterfacesEnums.Models
 {
+    //---Exercise 2: Interface---
+
+    //b.Create a class called DeathStar that implements the ILaser interface.
+    //You decide what the FireLaser method does.If you can't think of anything, just make it write/return "Pew pew".
+    
     internal class DeathStar : ILaser
     {
         public void FireLaser()
