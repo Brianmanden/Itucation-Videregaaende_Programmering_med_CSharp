@@ -1,4 +1,5 @@
-﻿using AbstractClassesInterfacesEnums.Models;
+﻿using AbstractClassesInterfacesEnums.Enums;
+using AbstractClassesInterfacesEnums.Models;
 
 namespace AbstractClassesInterfacesEnums
 {
@@ -36,6 +37,20 @@ namespace AbstractClassesInterfacesEnums
 
             DeathStar deathStar = new DeathStar();
             deathStar.FireLaser();
+
+            #endregion
+
+            Console.WriteLine(Environment.NewLine);
+
+            #region Exercise 3
+            Random random = new Random();
+
+            //for (int i = 1; i <= 100; i++)
+            //{
+            //    Console.WriteLine($"[{i}] - Random card drawn: { (Face)random.NextInt64(13)} of { (Suit)random.NextInt64(4)}");
+            //}
+            
+            Console.WriteLine($"Random card drawn: { (Face)random.NextInt64(13)} of { (Suit)random.NextInt64(4)}");
 
             #endregion
 
