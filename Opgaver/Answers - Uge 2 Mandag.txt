@@ -1,0 +1,163 @@
+// -------------------- Exercise 1 --------------------
+public class Employee
+{
+    string name;
+    double salary;
+    string department;
+    List<string> skills;
+
+    public Employee(string name, double salary, string department)
+    {
+        this.name = name;
+        this.salary = salary;
+        this.department = department;
+        skills = new List<string>();
+    }
+
+    public void AddSkill(string skill)
+    {
+        skills.Add(skill);
+    }
+
+    public void ChangeDepartment(string department)
+    {
+        this.department = department;
+    }
+
+    public string GetInfo()
+    {
+        string info = $"Name: {name}\nSalary: {salary}\nDepartment: {department}\nSkills:";
+        if (skills.Count != 0)
+        {
+            foreach (string skill in skills)
+            {
+                info += "\n - " + skill;
+            }
+        }
+        else
+        {
+            info += " None";
+        }
+        return info;
+    }
+}
+
+
+
+// -------------------- Exercise 2 --------------------
+public class Appointment
+{
+    public string Description { get; set; }
+    public string Date { get; set; }
+    public Appointment(string description, string date) 
+    { 
+        Description = description;
+        Date = date;
+    }
+    public virtual string AppointmentInfo()
+    {
+        return "";
+    }
+}
+
+public class OneTime : Appointment
+{
+    public OneTime(string description, string date) : base(description, date)
+    {
+    }
+
+    public override string AppointmentInfo()
+    {
+        string info = $"OneTime appointment: Date: {Date}, Description: {Description}";
+        return info;
+    }
+}
+
+public class Daily : Appointment
+{
+    public Daily(string description, string date) : base(description, date)
+    {
+    }
+
+    public override string AppointmentInfo()
+    {
+        string info = $"Daily appointment: Date: {Date}, Description: {Description}";
+        return info;
+    }
+}
+
+public class Monthly : Appointment
+{
+    public Monthly(string description, string date) : base(description, date)
+    {
+    }
+
+    public override string AppointmentInfo()
+    {
+        string info = $"Monthly appointment: Date: {Date}, Description: {Description}";
+        return info;
+    }
+}
+
+
+
+// -------------------- Exercise 3 --------------------
+List<Appointment> appointments = new List<Appointment>();
+appointments.Add(new OneTime("See the Dentist", "5/10/2023"));
+appointments.Add(new OneTime("Coffee with a friend", "6/10/2023"));
+appointments.Add(new Daily("Workout", "7/10/2023"));
+appointments.Add(new Daily("Workout", "8/10/2023"));
+appointments.Add(new Monthly("Go see your parents", "15/10/2023"));
+appointments.Add(new Monthly("Check in on grandma", "15/10/2023"));
+foreach (Appointment appointment in appointments)
+{
+    Console.WriteLine(appointment.AppointmentInfo());
+}
+
+
+
+// -------------------- Exercise 4 --------------------
+// a
+public class Artist
+{
+    public string Name { get; set; }
+    public string Genre { get; set; }
+    public virtual string PlaySong()
+    {
+        return $"Name: {Name}, Genre: {Genre}";
+    }
+}
+
+// b
+public class Band : Artist
+{
+    public string BestSong { get; set; }
+    public override string PlaySong()
+    {
+	// Two different ways of returning the same thing
+	// return $"Name: {Name}, Genre: {Genre}, Best Song: {BestSong}";
+        return base.PlaySong() + $", Best Song: {BestSong}";
+    }
+}
+
+// c
+public class SoloArtist : Band
+{
+    public override string PlaySong()
+    {
+        return "Solo Artist "+base.PlaySong();
+    }
+}
+
+// d
+Artist someArtist = new Artist { Name = "Weird Al", Genre = "Probably Polka" };
+Artist ts = new Artist { Name = "2Pac", Genre = "Hip Hop" };
+Band mew = new Band { Name = "Mew", Genre = "Alt/Rock", BestSong = "Am I Wry? No"};
+Band im = new Band { Name = "Iron Maiden", Genre = "Rock/Metal", BestSong = "Paschendale"};
+SoloArtist moe = new SoloArtist { Name = "MØ", Genre = "Pop", BestSong = "Pilgrim" };
+SoloArtist ar = new SoloArtist { Name = "Aesop Rock", Genre = "Hip Hop", BestSong = "None Shall Pass" };
+List<Artist> artists = new List<Artist>() { someArtist, mew, im, moe, ts};
+foreach (Artist artist in artists)
+{
+    Console.WriteLine(artist.PlaySong());
+}
