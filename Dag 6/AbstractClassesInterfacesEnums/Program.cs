@@ -28,7 +28,15 @@ namespace AbstractClassesInterfacesEnums
             decimal checkingAccountSecondBalance = checkingAccount.WithDraw(3001);
             Console.WriteLine($"Checking Account Second balance: { checkingAccountSecondBalance }");
 
+            #endregion
+
             Console.WriteLine(Environment.NewLine);
+
+            #region Exercise 2
+
+            DeathStar deathStar = new DeathStar();
+            deathStar.FireLaser();
+
             #endregion
 
             Console.ReadKey();
