@@ -74,7 +74,9 @@ namespace ThreadsAndDelegates
 
             foreach (Delegate del in calcDel.GetInvocationList())
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine($"{del.Method.Name} method - Result: { del.DynamicInvoke(2, 3)}");
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
 
             Console.ReadKey();
