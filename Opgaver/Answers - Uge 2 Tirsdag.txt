@@ -1,0 +1,104 @@
+// -------------------- Exercise 1 --------------------
+// a
+public abstract class BankAccount
+{
+    protected double balance = 0;
+    public double GetBalance()
+    {
+        return balance;
+    }
+    public abstract void Deposit(double amount);
+    public abstract void Withdraw(double amount);
+}
+
+// b
+public class CheckingAccount : BankAccount
+{
+    public override void Deposit(double amount)
+    {
+        balance += amount;
+    }
+    public override void Withdraw(double amount)
+    {
+        if (amount > 3000)
+        {
+            Console.WriteLine("Please contact your branch manager.");
+        }
+        else
+        {
+            balance -= amount;
+        }
+    }
+}
+
+// c
+public class SavingsAccount : BankAccount
+{
+    public override void Deposit(double amount)
+    {
+        amount *= 1.001;
+        balance += amount;
+    }
+    public override void Withdraw(double amount)
+    {
+        balance -= amount;
+    }
+}
+
+
+// -------------------- Exercise 2 --------------------
+// a
+public interface ILaser
+{
+    public void FireLaser();
+}
+
+// b
+public class DeathStar : ILaser
+{
+    public void FireLaser()
+    {
+        Console.WriteLine("Pew pew!");
+    }
+}
+
+// c
+DeathStar ds = new DeathStar();
+ds.FireLaser();
+
+
+// -------------------- Exercise 3 --------------------
+// a
+public enum Face
+{
+    ACE = 1,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE,
+    TEN,
+    JACK,
+    QUEEN,
+    KING
+}
+public enum Suit
+{
+    SPADES,
+    HEARTS,
+    DIAMONDS,
+    CLUBS
+}
+
+// b
+Random rand = new Random();
+int faceValue = rand.Next(1, 14);
+int suitValue = rand.Next(0, 4);
+Face card = (Face)faceValue;
+Suit suit = (Suit)suitValue;
+
+// c
+Console.WriteLine($"{card} of {suit}");
