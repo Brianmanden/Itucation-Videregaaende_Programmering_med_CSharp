@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Movies>
+  <Movie>
+    <Title>The Phantom Menace</Title>
+    <Director>George Lucas</Director>
+    <ReleaseDate>1999-05-19</ReleaseDate>
+    <Actors>
+      <Actor>Liam Neeson</Actor>
+      <Actor>Ewan Mcgregor</Actor>
+      <Actor>Jake Lloyd</Actor>
+      <Actor>Ian McDiarmid</Actor>
+      <Actor>Natalie Portman</Actor>
+      <Actor>Keira Knightley</Actor>
+    </Actors>
+  </Movie>
+  <Movie>
+    <Title>Man on the Moon</Title>
+    <Director>Milos Forman</Director>
+    <ReleaseDate>2000-03-10</ReleaseDate>
+    <Actors>
+      <Actor>Jim Carrey</Actor>
+      <Actor>Danny DeVito</Actor>
+      <Actor>Paul Giamatti</Actor>
+      <Actor>Courtney Love</Actor>
+      <Actor>Jerry Lawler</Actor>
+      <Actor>Vincent Schiavelli</Actor>
+    </Actors>
+  </Movie>
+  <Movie>
+    <Title>Training Day</Title>
+    <Director>Antoine Fuqua</Director>
+    <ReleaseDate>2001-11-16</ReleaseDate>
+    <Actors>
+      <Actor>Denzel Washington</Actor>
+      <Actor>Ethan Hawke</Actor>
+      <Actor>Eva Mendes</Actor>
+      <Actor>Snoop Dogg</Actor>
+      <Actor>Cliff Curtis</Actor>
+      <Actor>Macy Gray</Actor>
+      <Actor>Dr. Dre</Actor>
+    </Actors>
+  </Movie>
+  <Movie>
+    <Title>Everything Everywhere All at Once</Title>
+    <Director>Daniel Kwan, Daniel Scheinert</Director>
+    <ReleaseDate>2022-12-05</ReleaseDate>
+    <Actors>
+      <Actor>Michelle Yeoh</Actor>
+      <Actor>Ke Huy Quan</Actor>
+      <Actor>Stephanie Hsu</Actor>
+      <Actor>Jamie Lee Curtis</Actor>
+      <Actor>James Hong</Actor>
+      <Actor>Tallie Medel</Actor>
+      <Actor>Harry Shum Jr.</Actor>
+    </Actors>
+  </Movie>
+</Movies>
