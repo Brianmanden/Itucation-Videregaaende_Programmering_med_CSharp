@@ -5,11 +5,17 @@ namespace LINQandTasks
 {
     internal class Program
     {
+        // Exercise 2
+        // Create an async method, which can download some content from a specific url and return the result.
+        private static async Task<string> DownloadContent(string url)
+        {
+            HttpClient client = new HttpClient();
+            string result = await client.GetStringAsync(url);
+            return result;
+        }
+
         static void Main(string[] args)
         {
-
-
-
             //---Exercise 1: LINQ---
             //Included in the folder for today's exercises is the file movies.xml
             //It contains a bit of information about some amazing films.
@@ -49,6 +55,25 @@ namespace LINQandTasks
             #endregion
 
             Console.WriteLine(Environment.NewLine);
+            Console.ReadKey();
+
+            string htmlOutput = DownloadContent("https://kree8tive.dk").Result;
+            //Print the result, and see if you can make sense of the weird output!
+            //(feel free to test your method with different changes to the url - you might get some interesting results!)
+            Console.WriteLine("Raw weird HTML output:");
+            Console.WriteLine(htmlOutput);
+
+            //---Exercise 2: Task---
+            //The following url returns some information about a character from a certain franchise:
+            //https://swapi.dev/api/people/1
+            #region Exercise 2
+            //Run your method with the provided url.
+
+            string jsonOutput = DownloadContent("https://swapi.dev/api/people/1").Result;
+            Console.WriteLine("JSON output:");
+            Console.WriteLine(jsonOutput);
+
+            #endregion
 
             Console.ReadKey();
         }
