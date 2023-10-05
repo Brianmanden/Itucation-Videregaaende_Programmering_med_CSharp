@@ -5,15 +5,6 @@ namespace LINQandTasks
 {
     internal class Program
     {
-        // Exercise 2
-        // Create an async method, which can download some content from a specific url and return the result.
-        private static async Task<string> DownloadContent(string url)
-        {
-            HttpClient client = new HttpClient();
-            string result = await client.GetStringAsync(url);
-            return result;
-        }
-
         static void Main(string[] args)
         {
             //---Exercise 1: LINQ---
@@ -57,25 +48,39 @@ namespace LINQandTasks
             Console.WriteLine(Environment.NewLine);
             Console.ReadKey();
 
-            string htmlOutput = DownloadContent("https://kree8tive.dk").Result;
-            //Print the result, and see if you can make sense of the weird output!
-            //(feel free to test your method with different changes to the url - you might get some interesting results!)
-            Console.WriteLine("Raw weird HTML output:");
-            Console.WriteLine(htmlOutput);
-
+            #region Exercise 2
             //---Exercise 2: Task---
             //The following url returns some information about a character from a certain franchise:
             //https://swapi.dev/api/people/1
-            #region Exercise 2
-            //Run your method with the provided url.
 
             string jsonOutput = DownloadContent("https://swapi.dev/api/people/1").Result;
-            Console.WriteLine("JSON output:");
-            Console.WriteLine(jsonOutput);
 
+            //Print the result, and see if you can make sense of the weird output!
+            Console.WriteLine("JSON output from 'https://swapi.dev/api/people/1':");
+            Console.WriteLine(jsonOutput);
+            
+            Console.WriteLine(Environment.NewLine);
+            Console.ReadKey();
+
+            //(feel free to test your method with different changes to the url - you might get some interesting results!)
+            string htmlOutput = DownloadContent("https://www.kree8tive.dk").Result;
+            Console.WriteLine("Raw weird HTML output from 'https://www.kree8tive.dk':");
+            Console.WriteLine(htmlOutput);
+
+            //Run your method with the provided url.
             #endregion
 
+            Console.WriteLine("Press any key");
             Console.ReadKey();
+        }
+
+        // Exercise 2
+        // Create an async method, which can download some content from a specific url and return the result.
+        private static async Task<string> DownloadContent(string url)
+        {
+            HttpClient client = new HttpClient();
+            string result = await client.GetStringAsync(url);
+            return result;
         }
     }
 }
