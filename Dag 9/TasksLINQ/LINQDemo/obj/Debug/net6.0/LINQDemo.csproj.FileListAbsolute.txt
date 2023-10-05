@@ -1,0 +1,16 @@
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\LINQDemo.exe
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\LINQDemo.deps.json
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\LINQDemo.runtimeconfig.json
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\LINQDemo.dll
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\LINQDemo.pdb
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.csproj.AssemblyReference.cache
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.GeneratedMSBuildEditorConfig.editorconfig
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.AssemblyInfoInputs.cache
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.AssemblyInfo.cs
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.csproj.CoreCompileInputs.cache
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.dll
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\refint\LINQDemo.dll
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.pdb
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\LINQDemo.genruntimeconfig.cache
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\obj\Debug\net6.0\ref\LINQDemo.dll
+T:\DevelopmentFiles\NET-Kursus-9-2023\9-Task-LINQ\TasksLINQ\LINQDemo\bin\Debug\net6.0\employees.xml

@@ -1,0 +1,11 @@
+------- Downloading SQL Server -------
+Scroll down a bit and download either Developer or Express from the link:
+https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+
+Either version works just fine, but Express is used for the purpose of our examples.
+
+
+
+------- Downloading SQL Server Management Studio -------
+The following link starts the download automatically
+https://aka.ms/ssmsfullsetup
