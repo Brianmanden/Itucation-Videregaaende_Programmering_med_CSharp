@@ -48,6 +48,10 @@ namespace ThreadsAndDelegates
 
         private static double Divide(int i, int j)
         {
+            if (j == 0)
+            {
+                throw new DivideByZeroException();
+            }
             return (double)i / j;
         }
 
