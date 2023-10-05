@@ -1,0 +1,24 @@
+﻿--- Exercise 1: LINQ ---
+Included in the folder for today's exercises is the file movies.xml
+It contains a bit of information about some amazing films.
+
+a. Load the .xml file, and store the file in a variable.
+
+b. Query the file, and store information about the movies in a variable.
+
+c. Find a way to print some information about all the movies contained in the file.
+   The output has to include:
+   - Title of the movie.
+   - Who directed the movie.
+   - A list of actors.
+
+
+
+--- Exercise 2: Task ---
+The following url returns some information about a character from a certain franchise:
+https://swapi.dev/api/people/1
+
+Create an async method, which can download some content from a specific url and return the result.
+Run your method with the provided url.
+Print the result, and see if you can make sense of the weird output!
+(feel free to test your method with different changes to the url - you might get some interesting results!)
