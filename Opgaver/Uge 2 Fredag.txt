@@ -1,0 +1,23 @@
+--- Exercise 1 ---
+Create a Database called TestDB
+Create a table called Persons. You decide how many columns, but at minimum include an id and a name.
+Insert some records - at least three.
+Read all the records inserted into your table.
+Delete TestDB
+
+
+--- Exercise 2 ---
+a. Use either VoresDB or create a new Database
+
+b. Create two tables with the following columns, 
+   you choose the data types (but some make more sense than others):
+    - Departments(dID, dName, location)
+    - Employees(eID, eName, dID, Salary)
+
+c. Insert at least two records into your Departments table.
+   Insert at least five records into your Employees table.
+
+d. Your company needs an executive report about the employees!
+   Query the names of the employees, and how much they make.
+
+c. Update your executive report to include who works where.
