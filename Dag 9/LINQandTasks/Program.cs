@@ -16,7 +16,7 @@ namespace LINQandTasks
             XElement dataSource = XElement.Load("Data/movies.xml", LoadOptions.PreserveWhitespace);
 
             //b.Query the file, and store information about the movies in a variable.
-            var movies = from movie in dataSource.Descendants("Movie")
+            IEnumerable<XElement> movies = from movie in dataSource.Descendants("Movie")
                          orderby movie.Element("ReleaseDate").Value ascending
                          select movie;
 
