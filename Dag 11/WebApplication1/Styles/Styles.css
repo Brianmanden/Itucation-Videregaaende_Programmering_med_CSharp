@@ -1,5 +1,15 @@
-﻿.navbar {
-    background-color: aquamarine;
+﻿body {
+    background: rgb(0,212,255);
+    background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 85%, rgba(2,0,36,1) 100%);
+}
+
+.navbar {
+    
+    /* aquamarine converted to RGBA */
+    background-color: rgba(127, 255, 212, 0.6);
+    border-radius: 10px;
+    margin: 2em;
+    padding: 1rem;
 }
 
 navbar-brand{
@@ -7,7 +17,11 @@ navbar-brand{
 }
 
 .content {
-    padding: 1rem;
+    /* lightseagreen converted to RGBA */
+    background-color: rgba(32, 178, 170, 0.6);
+    border-radius: 10px;
+    margin: 2em;
+    padding: 4rem;
 }
 li{
     margin-left: 20px;
