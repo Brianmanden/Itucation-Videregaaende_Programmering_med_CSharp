@@ -1,10 +1,42 @@
-﻿<!DOCTYPE html>
+﻿<!--
+    --- Exercise 1 ---
+    Create a webpage with two inputs and a button. Tell the user that the inputs are meant to be used with numbers.
+    (If you would rather find a way to use prompts instead of inputs that's okay as well)
+    When the button is clicked, use javascript to:
+     - Grab two numbers from your two inputs in your browser.
+     - Add them together, and display the result.
+-->
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title></title>
 </head>
 <body>
+    <h1>Simple calculation</h1>
 
+    <p>Input two numbers and click the button to add them together.</p>
+
+    <label for="num1" />First Number
+    <input id="num1" type="number" value="0" />
+    <br />
+    <br />
+
+    <label for="num2" />Second Number
+    <input id="num2" type="number" value="0" />
+    <br />
+    <br />
+
+    <label for="num2" />Result
+    <input type="text" id="result" value="No result, yet." />
+    <br />
+    <br />
+
+    <button onclick="calcNumbers()">Add numbers</button>
+    <script>
+        calcNumbers = () => {
+            document.querySelector("#result").value = Number(document.querySelector("#num1").value) + Number(document.querySelector("#num2").value);
+        }
+    </script>
 </body>
 </html>
