@@ -1,4 +1,8 @@
-﻿body {
+﻿html {
+    font-size: 30px;
+}
+
+body {
     background: rgb(0,212,255);
     background: radial-gradient(circle, rgba(0,212,255,1) 0%, rgba(9,9,121,1) 85%, rgba(2,0,36,1) 100%);
 }
@@ -23,9 +27,14 @@ navbar-brand{
     margin: 2em;
     padding: 4rem;
 }
+small{
+    /*outline: 1px solid red;*/
+    font-size: 0.5rem;
+}
 li{
+    /*outline: 1px solid red;*/
     margin-left: 20px;
-    margin-right: 20px;
+    /*margin-right: 20px;*/
 }
 
 li:first-child {
@@ -33,10 +42,13 @@ li:first-child {
 }
 
 li::after{
-    outline: 1px solid blue;
+    /*outline: 1px solid blue;*/
     paddding-left: 1em;
     display: inline-block;
 }
 li::marker {
+    /*outline: 1px solid red;*/
+    display: inline-block;
     content: "⚓";
+    font-size: 0.75rem;
 }

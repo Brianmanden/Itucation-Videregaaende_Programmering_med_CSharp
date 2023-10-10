@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\America.jpg" />
+    <Content Include="Assets\flag-icon-noBg.png" />
     <Content Include="Assets\HenrikHaddock.png" />
     <Content Include="Assets\KaptajnFisker.png" />
     <Content Include="Assets\KaptajnSkæg.jpg" />
