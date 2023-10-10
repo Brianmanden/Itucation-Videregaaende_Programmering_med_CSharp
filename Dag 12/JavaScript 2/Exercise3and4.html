@@ -1,0 +1,82 @@
+﻿<!--
+    --- Exercise 3 ---
+    Find an image of your own choice, and add it to your project.
+    Create an html-page, and add the image to it.
+    Add two simple paragraphs with some text as well.
+    Find a way to add jQuery to your project, and add it to your html page.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        p {
+            user-select: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <img id="llameImg" src="/Assets/llama.png" />
+    <br />
+    <br />
+
+    <p>First Sample Paragraph</p>
+    <p>Second Sample Paragraph</p>
+
+    <br />
+    <br />
+
+    <button id="showImg">Show Llama again</button>
+
+    <!--
+        --- Exercise 4 ---
+        Using jQuery, add some fun functionality to your webpage:
+        - Hide your image by clicking on it.
+        - Get your image to show again by clicking on a button.
+        - When clicking on one of the paragraphs, change the text of the other paragraph.
+    -->
+    <script>
+        $(document).ready(function () {
+            console.log("Document ready!");
+
+            const llameImg = $("#llameImg");
+            llameImg.on(
+                'click',
+                () => {
+                    llameImg.animate(
+                        {
+                            opacity: .0,
+                            height: "5%",
+                        },
+                        1500);
+                }
+            );
+
+            const showImgButton = $("#showImg");
+            showImgButton.on('click',
+                () => {
+                    llameImg.animate(
+                        {
+                            opacity: 1,
+                            height: "100%",
+                        },
+                        1500);
+                }
+            );
+
+            let count = 1;
+
+            $('p').click(function () {
+                const paragraphs = $('p');
+                const indexOther = $(paragraphs).index(this) == 1 ? 0 : 1;
+
+                $(paragraphs[indexOther]).text($(paragraphs)[indexOther].innerHTML + "-" + count);
+                count++;
+            });
+
+        });
+    </script>
+</body>
+</html>
