@@ -11,6 +11,19 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        #colorField {
+            align-content: center;
+            background-color: dimgray;
+            border: 20px groove lightgray;
+            color: white;
+            height: 256px;
+            margin: auto;
+            padding: 10px;
+            text-align: center;
+            width: 256px;
+        }
+    </style>
 </head>
 <body>
     <h1>Simple calculation</h1>
@@ -33,10 +46,33 @@
     <br />
 
     <button onclick="calcNumbers()">Add numbers</button>
+
+    <hr />
+
+    <!-----
+        Exercise 2 ---
+        Using a new brand new site, or your work from yesterday, use javascript to add some fun functionality to your website.
+        You decide exactly how much fun to include, as long as you use at least one user defined function in the process.
+    -->
+    <div id="colorField" onmousemove="changeColor()">
+        <h3>The Color Field.</h3>
+        <br />
+        Move Mouse around in here <br /> to change background color.
+    </div>
+
     <script>
         calcNumbers = () => {
             document.querySelector("#result").value = Number(document.querySelector("#num1").value) + Number(document.querySelector("#num2").value);
         }
+
+        function changeColor(){
+            const x = event.pageX - event.currentTarget.offsetLeft;
+            const y = event.pageY - event.currentTarget.offsetTop;
+
+            document.querySelector("#colorField").style.backgroundColor = "hsl(" + x + "," + y +"%,80%)";
+        }
+
+        document.querySelector("#colorField").addEventListener("mousemove", changeColor);
     </script>
 </body>
 </html>
