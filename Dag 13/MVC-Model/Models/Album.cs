@@ -7,8 +7,11 @@ namespace MVC_Model.Models
         [Key]
         public int AlbumID { get; set; }
 
+        [Required]
+        [StringLength(50)]
         public string Title { get; set; }
 
+        [Required]
         public string Artist { get; set; }
 
         [CheckValidYear]
