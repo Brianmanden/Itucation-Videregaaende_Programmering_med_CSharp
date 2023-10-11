@@ -25,7 +25,7 @@ namespace PhotoSharingApplication.Models
             base.Seed(context);
 
             List<Photo> photos = new List<Photo> {
-                new Photo{ Title = "Test Photo", Description = "A fine Description", UserName = "Satoshi Nakamoto", PhotoFile = GetFileBytes("\\Images\flower.jpg"), ImageMimeType = "image/jpeg", CreatedDate = DateTime.Today },
+                new Photo{ Title = "Test Photo", Description = "A fine Description", UserName = "Satoshi Nakamoto", PhotoFile = GetFileBytes("\\Images\\flower.jpg"), ImageMimeType = "image/jpeg", CreatedDate = DateTime.Today },
             };
 
             photos.ForEach(p => context.Photos.Add(p));
