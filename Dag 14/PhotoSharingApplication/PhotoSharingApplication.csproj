@@ -126,6 +126,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PhotoController.cs" />
+    <Compile Include="Controllers\YesterdaysPhotoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,14 +188,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Photo\Create.cshtml" />
-    <Content Include="Views\Photo\Delete.cshtml" />
-    <Content Include="Views\Photo\Details.cshtml" />
-    <Content Include="Views\Photo\Edit.cshtml" />
-    <Content Include="Views\Photo\Index.cshtml" />
+    <Content Include="Views\YesterdaysPhoto\Create.cshtml" />
+    <Content Include="Views\YesterdaysPhoto\Delete.cshtml" />
+    <Content Include="Views\YesterdaysPhoto\Details.cshtml" />
+    <Content Include="Views\YesterdaysPhoto\Edit.cshtml" />
+    <Content Include="Views\YesterdaysPhoto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Photo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
