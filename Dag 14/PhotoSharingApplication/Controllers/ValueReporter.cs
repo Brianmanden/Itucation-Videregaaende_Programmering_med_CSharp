@@ -14,9 +14,10 @@ namespace PhotoSharingApplication.Controllers
 
             Debug.WriteLine($"Controller: { controllerName } - Action: { actionName }", "Action Values");
 
-            routeData.Values.ForEach(value =>
+            routeData.Values.ForEach(item =>
             {
-                Debug.WriteLine(">>> Key: { 0 } : Value: { 1 }", value.Key, value.Value);
+                var bp = "";
+                Debug.WriteLine(">>> Key: {0} : Value: {1}", item.Key, item.Value);
             });
         }
 

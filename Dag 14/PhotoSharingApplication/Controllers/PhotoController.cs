@@ -95,7 +95,7 @@ namespace PhotoSharingApplication.Controllers
             Photo foundPhoto = context.Photos.Find(id);
 
             if (foundPhoto != null) {
-                File(foundPhoto.PhotoFile, foundPhoto.ImageMimeType);
+                return File(foundPhoto.PhotoFile, foundPhoto.ImageMimeType);
             }
 
             return null;
