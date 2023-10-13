@@ -12,16 +12,12 @@ namespace DatabaseFirstDemo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class sysdiagram
     {
-        public int oID { get; set; }
-        public Nullable<int> cID { get; set; }
-        public Nullable<int> pID { get; set; }
-        public Nullable<System.DateTime> orderDate { get; set; }
-        public Nullable<bool> paymentStatus { get; set; }
-        public Nullable<int> quantity { get; set; }
-    
-        public virtual Customer Customer { get; set; }
-        public virtual Product Product { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
