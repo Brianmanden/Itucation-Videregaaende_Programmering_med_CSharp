@@ -17,15 +17,15 @@ namespace Exercise2_MVC_DatabaseFirst.Models
 
         [Required]
         [StringLength(30)]
-        [DisplayName("Customer Name")]
+        [DisplayName("Name")]
         public string cName { get; set; }
 
         [StringLength(45)]
-        [DisplayName("Customer Email")]
+        [DisplayName("Email")]
         [DataType(DataType.EmailAddress)]
         public string cEmail { get; set; }
 
-        [DisplayName("Customer Phone")]
+        [DisplayName("Phone")]
         [DataType(DataType.PhoneNumber)]
         public int? cPhone { get; set; }
 

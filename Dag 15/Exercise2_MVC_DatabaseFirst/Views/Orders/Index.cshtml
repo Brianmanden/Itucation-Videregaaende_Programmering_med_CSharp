@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Exercise2_MVC_DatabaseFirst.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.cName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.pName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.paymentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.cName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.pName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.orderDate)
+            </td>
+            <td>
+                @if (item.paymentStatus == null)
+                {
+                    <strong>Not Set</strong> }
+                else if (item.paymentStatus == false)
+                {
+                    <strong>Not Paid</strong>
+                }
+                else
+                { <strong>Paid</strong>}
+
+                @* ORIGINAL *@
+                @*@Html.DisplayFor(modelItem => item.paymentStatus)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.oID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.oID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.oID })
+            </td>
+        </tr>
+    }
+
+</table>
