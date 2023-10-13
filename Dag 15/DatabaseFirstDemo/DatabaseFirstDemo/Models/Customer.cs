@@ -11,7 +11,9 @@ namespace DatabaseFirstDemo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +21,18 @@ namespace DatabaseFirstDemo.Models
         {
             this.Orders = new HashSet<Order>();
         }
-    
+
         public int cID { get; set; }
+
+        [DisplayName("Customer Name")]
         public string cName { get; set; }
+
+        [DisplayName("Customer Email")]
+        [DataType(DataType.EmailAddress)]
         public string cEmail { get; set; }
+
+        [DisplayName("Customer Phone")]
+        [DataType(DataType.PhoneNumber)]
         public Nullable<int> cPhone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

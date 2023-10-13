@@ -10,15 +10,27 @@
 namespace DatabaseFirstDemo.Models
 {
     using System;
-    using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Order
     {
         public int oID { get; set; }
+
+        [DisplayName("Customer Name")]
         public Nullable<int> cID { get; set; }
+
+        [DisplayName("Product Name")]
         public Nullable<int> pID { get; set; }
+
+        [DisplayName("Order Date")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> orderDate { get; set; }
+
+        [DisplayName("Payment Status")]
         public Nullable<bool> paymentStatus { get; set; }
+
+        [DisplayName("Quantity")]
         public Nullable<int> quantity { get; set; }
     
         public virtual Customer Customer { get; set; }

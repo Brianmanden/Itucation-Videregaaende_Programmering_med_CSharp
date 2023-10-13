@@ -11,7 +11,8 @@ namespace DatabaseFirstDemo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,7 +22,11 @@ namespace DatabaseFirstDemo.Models
         }
     
         public int pID { get; set; }
+
+        [DisplayName("Product Name")]
         public string pName { get; set; }
+
+        [DisplayName("Product Price")]
         public Nullable<int> pPrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
