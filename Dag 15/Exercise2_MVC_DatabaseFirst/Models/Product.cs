@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Exercise2_MVC_DatabaseFirst.Models
@@ -16,8 +17,11 @@ namespace Exercise2_MVC_DatabaseFirst.Models
 
         [Required]
         [StringLength(50)]
+        [DisplayName("Product Name")]
         public string pName { get; set; }
 
+        [DisplayName("Product Price")]
+        [DataType(DataType.Currency)]
         public int? pPrice { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

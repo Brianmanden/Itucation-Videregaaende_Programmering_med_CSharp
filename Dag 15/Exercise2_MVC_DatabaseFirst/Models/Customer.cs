@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Exercise2_MVC_DatabaseFirst.Models
@@ -16,11 +17,16 @@ namespace Exercise2_MVC_DatabaseFirst.Models
 
         [Required]
         [StringLength(30)]
+        [DisplayName("Customer Name")]
         public string cName { get; set; }
 
         [StringLength(45)]
+        [DisplayName("Customer Email")]
+        [DataType(DataType.EmailAddress)]
         public string cEmail { get; set; }
 
+        [DisplayName("Customer Phone")]
+        [DataType(DataType.PhoneNumber)]
         public int? cPhone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
