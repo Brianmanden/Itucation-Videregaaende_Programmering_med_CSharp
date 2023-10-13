@@ -12,7 +12,7 @@ namespace DatabaseFirstDemo.Controllers
 {
     public class OrdersController : Controller
     {
-        private VoresDB db = new VoresDB();
+        private VoresDBEntities db = new VoresDBEntities();
 
         // GET: Orders
         public ActionResult Index()
