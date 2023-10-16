@@ -1,0 +1,24 @@
+dir
+Service
+dotnet
+dotnet --info
+
+cd PathToWhereYouWantToPutYourProjects
+md CoreTest
+cd CoreTest
+md MyConsoleApp
+cd MyConsoleApp
+dotnet new console
+type program.cs
+
+
+cd..
+md MyEmptyWebApp
+cd MyEmptyWebApp
+dotnet new web -o MyEmptyWebApp
+
+
+cd..
+md MyMVCWebApp
+cd MyMVCWebApp
+dotnet new mvc -o MyMVCWebApp
