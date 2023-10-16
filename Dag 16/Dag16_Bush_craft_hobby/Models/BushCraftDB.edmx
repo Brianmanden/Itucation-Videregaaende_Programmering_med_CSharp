@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="BushCraftDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="BushCraftDBTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BushCraftDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="BushCraftDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Documents" EntityType="BushCraftDB.Document" />
+          <EntitySet Name="Tags" EntityType="BushCraftDB.Tag" />
+          <EntitySet Name="Topics" EntityType="BushCraftDB.Topic" />
+          <AssociationSet Name="DocumentTag" Association="BushCraftDB.DocumentTag">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="DocumentTopic" Association="BushCraftDB.DocumentTopic">
+            <End Role="Document" EntitySet="Documents" />
+            <End Role="Topic" EntitySet="Topics" />
+          </AssociationSet>
+          <AssociationSet Name="TopicTag" Association="BushCraftDB.TopicTag">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Heading" Type="String" Nullable="false" />
+          <Property Name="Images" Type="String" Nullable="false" />
+          <Property Name="Tags" Type="String" Nullable="false" />
+          <Property Name="Topics" Type="String" Nullable="false" />
+          <Property Name="ReadMore" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tags1" Relationship="BushCraftDB.DocumentTag" FromRole="Document" ToRole="Tag" />
+          <NavigationProperty Name="Topics1" Relationship="BushCraftDB.DocumentTopic" FromRole="Document" ToRole="Topic" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Documents" Relationship="BushCraftDB.DocumentTag" FromRole="Tag" ToRole="Document" />
+          <NavigationProperty Name="Topics" Relationship="BushCraftDB.TopicTag" FromRole="Tag" ToRole="Topic" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <NavigationProperty Name="Documents" Relationship="BushCraftDB.DocumentTopic" FromRole="Topic" ToRole="Document" />
+          <NavigationProperty Name="Tags" Relationship="BushCraftDB.TopicTag" FromRole="Topic" ToRole="Tag" />
+        </EntityType>
+        <Association Name="DocumentTag">
+          <End Type="BushCraftDB.Document" Role="Document" Multiplicity="*" />
+          <End Type="BushCraftDB.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+        <Association Name="DocumentTopic">
+          <End Type="BushCraftDB.Document" Role="Document" Multiplicity="*" />
+          <End Type="BushCraftDB.Topic" Role="Topic" Multiplicity="*" />
+        </Association>
+        <Association Name="TopicTag">
+          <End Type="BushCraftDB.Topic" Role="Topic" Multiplicity="*" />
+          <End Type="BushCraftDB.Tag" Role="Tag" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="BushCraftDB" />
+        <Alias Key="Target" Value="BushCraftDB.Store" />
+        <EntityContainerMapping CdmEntityContainer="BushCraftDBContainer" StorageEntityContainer="BushCraftDBTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
