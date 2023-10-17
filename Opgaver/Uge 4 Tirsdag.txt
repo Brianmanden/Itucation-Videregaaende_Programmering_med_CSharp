@@ -1,0 +1,111 @@
+---------- 1 ----------
+The following class exists:
+
+public class Human
+{
+    public string name;
+    public int age;
+    public Human(string name, int age) 
+    {
+        name = name;
+        age = age;
+    }
+}
+
+The following code is used in Main:
+Human h = new Human("Mark", 25);
+Console.WriteLine(h.name);
+
+What is the output of the code above?
+	a. 25
+	b. Error
+	c. "Mark"
+	d. ""
+
+
+---------- 2 ----------
+int num = 5;
+for(int i = 0; i < num; i++)
+{
+    Console.WriteLine(i);
+}
+
+Which integers are printed in the for loop above?
+
+
+---------- 3 ----------
+int num = 4;
+while (num>0)
+{
+    Console.WriteLine($"Number: {num}");
+    num--;
+}
+
+What is the lowest number printed in the while loop above?
+
+
+---------- 4 ----------
+List<int> numbers = new List<int>();
+Using only a for loop, make the list contain the following: [1, 2, 3, 4, 5]
+
+
+---------- 5 ----------
+List<string> words = new List<string> { "Bunker", "Glass", "C#", "Blanket", "TV" };
+List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+int number = 3;
+
+foreach (int i in numbers)
+{
+    if(i >= numbers.Count-1)
+    {
+        break;
+    }
+    Console.WriteLine(words[i]);
+}
+
+Which words get printed in the for loop above?
+
+
+---------- 6 ----------
+for(int i = 0; i < 5; i++)
+{
+    for(int j = 0; j < 2; j++)
+    {
+        Console.WriteLine("C#");
+    }
+}
+
+How many times does 'C#' get printed in the code above?
+
+
+---------- 7 ----------
+public static string Moria(string val1 = null, string val2 = null)
+{
+    if (val2 == null)
+    {
+        Console.WriteLine("Fail");
+        return null;
+    }
+    else if (val2 == null && val1 != null)
+    {
+        Console.WriteLine("Fail");
+        return null;
+    }
+    else if (val2 == null || val1 != null)
+    {
+        Console.WriteLine("Fail");
+        return null;
+    }
+    else if(val1 == null && val2 == "friend")
+    {
+        Console.WriteLine("Enter");
+        return val2;
+    }
+    else
+    {
+        Console.WriteLine("Fail");
+        return null;
+    }
+}
+
+How do you successfully get the Moria() method to print 'Enter' ?
