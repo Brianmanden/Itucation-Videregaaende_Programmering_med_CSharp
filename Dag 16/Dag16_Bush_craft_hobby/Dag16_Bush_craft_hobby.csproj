@@ -129,36 +129,33 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TagsController.cs" />
-    <Compile Include="Controllers\TopicsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BushCraftDBContext.Context.cs">
+    <Compile Include="Models\BushCraftDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BushCraftDBContext.Context.tt</DependentUpon>
+      <DependentUpon>BushCraftDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BushCraftDBContext.cs">
+    <Compile Include="Models\BushCraftDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BushCraftDBContext.tt</DependentUpon>
+      <DependentUpon>BushCraftDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BushCraftDBContext.Designer.cs">
+    <Compile Include="Models\BushCraftDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BushCraftDBContext.edmx</DependentUpon>
+      <DependentUpon>BushCraftDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Document.cs">
-      <DependentUpon>BushCraftDBContext.tt</DependentUpon>
+      <DependentUpon>BushCraftDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Tag.cs">
-      <DependentUpon>BushCraftDBContext.tt</DependentUpon>
+      <DependentUpon>BushCraftDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Topic.cs">
-      <DependentUpon>BushCraftDBContext.tt</DependentUpon>
+      <DependentUpon>BushCraftDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -182,16 +179,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\BushCraftDBContext.Context.tt">
+    <Content Include="Models\BushCraftDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BushCraftDBContext.Context.cs</LastGenOutput>
-      <DependentUpon>BushCraftDBContext.edmx</DependentUpon>
+      <LastGenOutput>BushCraftDB.Context.cs</LastGenOutput>
+      <DependentUpon>BushCraftDB.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\BushCraftDBContext.edmx.sql" />
-    <Content Include="Models\BushCraftDBContext.tt">
+    <Content Include="Models\BushCraftDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BushCraftDBContext.cs</LastGenOutput>
-      <DependentUpon>BushCraftDBContext.edmx</DependentUpon>
+      <LastGenOutput>BushCraftDB.cs</LastGenOutput>
+      <DependentUpon>BushCraftDB.edmx</DependentUpon>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -201,12 +197,12 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Notes.md" />
     <Content Include="Exercise 1.md" />
-    <EntityDeploy Include="Models\BushCraftDBContext.edmx">
+    <EntityDeploy Include="Models\BushCraftDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BushCraftDBContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>BushCraftDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BushCraftDBContext.edmx.diagram">
-      <DependentUpon>BushCraftDBContext.edmx</DependentUpon>
+    <Content Include="Models\BushCraftDB.edmx.diagram">
+      <DependentUpon>BushCraftDB.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -233,21 +229,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Documents\Create.cshtml" />
-    <Content Include="Views\Documents\Delete.cshtml" />
-    <Content Include="Views\Documents\Details.cshtml" />
-    <Content Include="Views\Documents\Edit.cshtml" />
-    <Content Include="Views\Documents\Index.cshtml" />
-    <Content Include="Views\Topics\Create.cshtml" />
-    <Content Include="Views\Topics\Delete.cshtml" />
-    <Content Include="Views\Topics\Details.cshtml" />
-    <Content Include="Views\Topics\Edit.cshtml" />
-    <Content Include="Views\Topics\Index.cshtml" />
-    <Content Include="Views\Tags\Create.cshtml" />
-    <Content Include="Views\Tags\Delete.cshtml" />
-    <Content Include="Views\Tags\Details.cshtml" />
-    <Content Include="Views\Tags\Edit.cshtml" />
-    <Content Include="Views\Tags\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
