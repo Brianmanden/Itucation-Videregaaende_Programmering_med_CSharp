@@ -26,8 +26,9 @@ What is the output of the code above?
 	c. "Mark"
 	d. ""
 
-**Answer:** c !
-The first line instantiates an object of the Class Human with a variable name: h using "Mark" as the name and 25 as the age as method parameters in the class constructor.
+**Answer:**  ~~c !
+The first line instantiates an object of the Class Human with a variable name: h using "Mark" as the name and 25 as the age as method parameters in the class constructor.~~
+[EDIT] The correct answer is d - empty string !!!
 
 ---
 
@@ -132,6 +133,7 @@ for(int i = 0; i < 5; i++)
 ```
 
 How many times does 'C#' get printed in the code above?
+
 **Answer:** The output will be the string "C#" printed 10 times. The outer loop will "multiply" the inner loop 5 times (0-4) and the inner loop will run 2 times (0-1) each time the outer loop loops.
 
 ---
