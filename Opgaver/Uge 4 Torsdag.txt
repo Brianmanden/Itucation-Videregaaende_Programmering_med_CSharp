@@ -1,0 +1,15 @@
+--- Exercise: WebAPI ---
+In today's exercise, you are going to create an API to use with one of your hobbies.
+You can use either a database or just create your own data in a repository.
+
+Start by creating your Model.
+
+Create an Interface and add methods to Get, Create, Update, and Delete.
+Create a Repository which implements your interface.
+Add Dependency Injection to your Program file.
+
+Now it is time to create a controller for your hobby.
+Make sure your controller makes use of your repository.
+Your controller should have endpoints to GET, POST, PUT, and DELETE.
+
+Run your app, and test your endpoints using Postman!
