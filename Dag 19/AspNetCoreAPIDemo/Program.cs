@@ -1,5 +1,7 @@
 using AspNetCoreAPIDemo.Interfaces;
+using AspNetCoreAPIDemo.Models;
 using AspNetCoreAPIDemo.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 // Dependency Injection
-builder.Services.AddSingleton<IBooksInterface, BooksRepository>();
+builder.Services.AddDbContext<BooksDb>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("BooksDb")));
+//builder.Services.AddSingleton<IBooksInterface, BookDatabaseRepository>();
+
+builder.Services.AddScoped<IBooksInterface, BookDatabaseRepository>();
 
 var app = builder.Build();
 
