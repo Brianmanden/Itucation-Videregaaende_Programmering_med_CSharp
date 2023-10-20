@@ -1,0 +1,30 @@
+﻿@page "/customers"
+
+<h3>Liste af kunder</h3>
+
+@if (Customers != null && Customers.Count > 0)
+{
+    <h2>Yes, There are @Customers.Count Customers</h2>
+
+    <table class="table table-striped table-bordered table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Customers)
+            {
+                <tr>
+                    <td>@c.Id</td>
+                    <td>@c.Name</td>
+                    <td>@c.Email</td>
+                    <td>@c.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

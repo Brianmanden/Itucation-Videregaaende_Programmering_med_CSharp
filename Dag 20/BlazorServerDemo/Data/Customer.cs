@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BlazorAppBlazorServerDemo.Data;
+﻿namespace BlazorServerDemo.Data;
 
 public partial class Customer
 {

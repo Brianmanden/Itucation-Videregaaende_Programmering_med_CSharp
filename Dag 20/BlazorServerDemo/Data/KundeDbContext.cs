@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace BlazorAppBlazorServerDemo.Data;
+namespace BlazorServerDemo.Data;
 
 public partial class KundeDbContext : DbContext
 {
