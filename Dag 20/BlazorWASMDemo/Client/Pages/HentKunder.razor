@@ -1,0 +1,42 @@
+﻿@page "/customers"
+@inject HttpClient Http
+
+<Heading CustomHeading="Kundeoversigt" />
+
+@if (customers == null)
+{
+    <p><em>Fetching Customers...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.Id</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Phone</td>
+                </tr>                
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Customer[]? customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await Http.GetFromJsonAsync<Customer[]>("api/Customers");
+    }
+}

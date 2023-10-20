@@ -1,0 +1,11 @@
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\bin\Debug\net6.0\BlazorWASMDemo.Shared.deps.json
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\bin\Debug\net6.0\BlazorWASMDemo.Shared.dll
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\bin\Debug\net6.0\BlazorWASMDemo.Shared.pdb
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.AssemblyInfoInputs.cache
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.AssemblyInfo.cs
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.csproj.CoreCompileInputs.cache
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.dll
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\refint\BlazorWASMDemo.Shared.dll
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\BlazorWASMDemo.Shared.pdb
+C:\PROJEKTER\Itucation-Videregaaende_Programmering_med_CSharp\Dag 20\BlazorWASMDemo\Shared\obj\Debug\net6.0\ref\BlazorWASMDemo.Shared.dll

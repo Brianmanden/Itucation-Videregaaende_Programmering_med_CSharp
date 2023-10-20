@@ -1,0 +1,13 @@
+﻿@page "/binding"
+
+<Heading></Heading>
+<Heading CustomHeading="Two Way Bindings" />
+<label>Name: @Name</label>
+<br />
+<input type="text" value="@Name" @onchange="n => { Name = n.Value.ToString();}" />
+<br />
+<input type="text" @bind="Name" @bind:event="oninput" />
+
+@code {
+    public string Name { get; set; } = "Navn her";
+}
