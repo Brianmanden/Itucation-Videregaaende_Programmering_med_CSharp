@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using Eksamensprojekt.Server.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<EksamensprojektContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:Eksamensprojekt"]));
 
 var app = builder.Build();
 
