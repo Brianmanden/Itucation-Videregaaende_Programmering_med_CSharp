@@ -1,0 +1,41 @@
+﻿@page "/documents/{DocumentId:int}"
+@inject HttpClient Http;
+@using BushcraftBlog.Shared.Models;
+
+<h2>Document</h2>
+<h2>@DocumentId</h2>
+
+@if (document == null)
+{
+    <h3>Fetching document...</h3>    
+}
+else
+{
+    <h3>@document.Heading</h3>
+
+    <pre>
+        @document.Content
+    </pre>
+}
+
+
+@code {
+    [Parameter]
+    public int DocumentId { get; set; }
+    
+    // [Parameter]
+    // public string DocumentHeading { get; set; } = "...";
+    
+    // [Parameter]
+    // public string DocumentName { get; set; } = "...";
+    
+    // [Parameter]
+    // public string DocumentContent { get; set; } = "...";
+
+    private Document? document;
+
+    protected override async Task OnInitializedAsync()
+    {
+        document = await Http.GetFromJsonAsync<Document>($"api/Documents/{DocumentId}");
+    }
+}

@@ -1,12 +1,17 @@
 ﻿@page "/documents"
 @inject HttpClient Http;
+@inject NavigationManager Navigation
 @using BushcraftBlog.Shared.Models;
 
 <h2>List of Bushcraft Documents</h2>
 
-@if (AllDocuments != null && AllDocuments.Count > 0)
+@if (allDocuments == null)
 {
-    <h3>Here are @AllDocuments.Count Bushcraft Documents for you 🙂👍</h3>
+    <p>Fetching documents</p>
+}
+else
+{
+    <h3>Here are @allDocuments.Length Bushcraft Documents for you 🙂👍</h3>
 
     <table class="table table-striped table-bordered table-sm">
         <thead>
@@ -18,24 +23,34 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var doc in AllDocuments)
+            @foreach (var doc in allDocuments)
             {
-                <tr>
-                    <td>@doc.Id</td>
-                    <td>@doc.Name</td>
-                    <td>@doc.Heading</td>
-                    <td>@doc.Content</td>
-                </tr>
+                @*
+                    <tr>
+                        <td>@doc.Id</td>
+                        <td>@doc.Name</td>
+                        <td>@doc.Heading</td>
+                        <td>@doc.Content</td>
+                    </tr>*@
+                <button class="btn btn-primary" @onclick="() => NavigateToSingleDocumentComponent(doc.Id)">
+                    Navigate to @doc.Id
+                </button>
+
             }
         </tbody>
     </table>
 }
 
-@code{
-    private List<Document>? AllDocuments;
+@code {
+    private Document[]? allDocuments;
+
+    private void NavigateToSingleDocumentComponent(int DocumentId)
+    {
+        Navigation.NavigateTo($"documents/{DocumentId}");
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        AllDocuments = await Http.GetFromJsonAsync<List<Document>>("api/Documents");
+        allDocuments = await Http.GetFromJsonAsync<Document[]>("api/documents");
     }
 }

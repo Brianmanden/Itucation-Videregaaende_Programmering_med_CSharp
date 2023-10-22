@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BushcraftBlog.Server", "Server\BushcraftBlog.Server.csproj", "{6F561496-826C-4FDD-8E59-3B50B98AA17C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BushcraftBlog.Server", "Server\BushcraftBlog.Server.csproj", "{6F561496-826C-4FDD-8E59-3B50B98AA17C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BushcraftBlog.Client", "Client\BushcraftBlog.Client.csproj", "{00293E81-E540-4652-B169-6BB9636B006C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BushcraftBlog.Client", "Client\BushcraftBlog.Client.csproj", "{00293E81-E540-4652-B169-6BB9636B006C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BushcraftBlog.Shared", "Shared\BushcraftBlog.Shared.csproj", "{BAAB98A2-B43C-4A9E-A193-3AE635A22CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BushcraftBlog.Shared", "Shared\BushcraftBlog.Shared.csproj", "{BAAB98A2-B43C-4A9E-A193-3AE635A22CC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

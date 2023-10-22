@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BushcraftBlog.Server.Models;
+using BushcraftBlog.Shared.Models;
 
 namespace BushcraftBlog.Server.Controllers
 {

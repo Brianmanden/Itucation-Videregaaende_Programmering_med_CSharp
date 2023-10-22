@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using BushcraftBlog.Shared.Models;
 
 namespace BushcraftBlog.Server.Models;
 
