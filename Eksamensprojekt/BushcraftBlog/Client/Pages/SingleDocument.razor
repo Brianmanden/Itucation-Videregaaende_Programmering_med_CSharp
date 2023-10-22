@@ -20,19 +20,10 @@ else
 
 
 @code {
+    private Document? document;
+
     [Parameter]
     public int DocumentId { get; set; }
-    
-    // [Parameter]
-    // public string DocumentHeading { get; set; } = "...";
-    
-    // [Parameter]
-    // public string DocumentName { get; set; } = "...";
-    
-    // [Parameter]
-    // public string DocumentContent { get; set; } = "...";
-
-    private Document? document;
 
     protected override async Task OnInitializedAsync()
     {
