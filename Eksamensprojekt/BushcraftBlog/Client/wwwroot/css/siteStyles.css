@@ -1,0 +1,13 @@
+﻿.card {
+    margin-bottom: 35px;
+}
+
+.card-img{
+    border-radius: 5px;
+}
+
+.card-img-overlay{
+    background: rgba(50, 50, 50, 0.2);
+    margin: 10px;
+    border-radius: 10px;
+}
