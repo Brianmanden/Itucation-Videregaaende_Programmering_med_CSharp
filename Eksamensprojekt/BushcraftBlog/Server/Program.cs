@@ -1,4 +1,5 @@
-using Microsoft.AspNetCore.ResponseCompression;
+using BushcraftBlog.Server.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+builder.Services.AddDbContext<BushcraftBlogDBContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("BushcraftBlogDB")));
+
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<BushcraftBlogDBContext>();
+    dbContext.Database.EnsureCreated();
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
