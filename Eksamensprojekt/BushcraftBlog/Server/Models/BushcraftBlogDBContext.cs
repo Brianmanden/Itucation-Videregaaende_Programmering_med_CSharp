@@ -90,8 +90,8 @@ namespace BushcraftBlog.Server.Models
             #endregion
         }
 
-        public DbSet<BushcraftBlog.Shared.Models.Topic>? Topic { get; set; }
+        public DbSet<Topic>? Topic { get; set; }
 
-        public DbSet<BushcraftBlog.Shared.Models.Tag>? Tag { get; set; }
+        public DbSet<Tag>? Tag { get; set; }
     }
 }
