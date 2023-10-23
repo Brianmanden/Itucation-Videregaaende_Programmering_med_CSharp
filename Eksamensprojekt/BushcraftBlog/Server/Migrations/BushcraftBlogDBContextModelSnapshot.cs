@@ -49,11 +49,11 @@ namespace BushcraftBlog.Server.Migrations
 
             modelBuilder.Entity("BushcraftBlog.Shared.Models.Tag", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TagId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -65,7 +65,7 @@ namespace BushcraftBlog.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("TagId");
 
                     b.HasIndex("DocumentId");
 
@@ -74,11 +74,11 @@ namespace BushcraftBlog.Server.Migrations
 
             modelBuilder.Entity("BushcraftBlog.Shared.Models.Topic", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TopicId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TopicId"));
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -90,7 +90,7 @@ namespace BushcraftBlog.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("TopicId");
 
                     b.HasIndex("DocumentId");
 

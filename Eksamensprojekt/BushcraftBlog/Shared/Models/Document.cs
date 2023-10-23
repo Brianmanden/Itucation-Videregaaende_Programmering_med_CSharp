@@ -10,11 +10,11 @@ public class Document
     [Required]
     public string Name { get; set; }
 
-    public List<Topic>? Topics { get; set; }
-
-    public List<Tag>? Tags { get; set; }
-
     public string Heading { get; set; }
 
     public string Content { get; set; }
+
+    public virtual ICollection<Topic>? Topics { get; set; }
+
+    public virtual ICollection<Tag>? Tags { get; set; }
 }
