@@ -50,7 +50,7 @@ namespace BushcraftBlog.Server.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDocument(int id, Document document)
         {
-            if (id != document.Id)
+            if (id != document.DocumentId)
             {
                 return BadRequest();
             }
@@ -88,7 +88,7 @@ namespace BushcraftBlog.Server.Controllers
             _context.Documents.Add(document);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDocument", new { id = document.Id }, document);
+            return CreatedAtAction("GetDocument", new { id = document.DocumentId }, document);
         }
 
         // DELETE: api/Documents/5
@@ -113,7 +113,7 @@ namespace BushcraftBlog.Server.Controllers
 
         private bool DocumentExists(int id)
         {
-            return (_context.Documents?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Documents?.Any(e => e.DocumentId == id)).GetValueOrDefault();
         }
     }
 }

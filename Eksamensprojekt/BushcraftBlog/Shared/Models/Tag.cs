@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BushcraftBlog.Shared.Models
 {
@@ -6,6 +7,9 @@ namespace BushcraftBlog.Shared.Models
     {
         [Key]
         public int TagId { get; set; }
+
+        [ForeignKey("Document")]
+        public int DocumentId { get; set; }
 
         [Required]
         public string Name { get; set; }

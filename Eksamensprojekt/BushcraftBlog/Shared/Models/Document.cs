@@ -5,7 +5,7 @@ namespace BushcraftBlog.Shared.Models;
 public class Document
 {
     [Key]
-    public int Id { get; set; }
+    public int DocumentId { get; set; }
 
     [Required]
     public string Name { get; set; }
