@@ -39,6 +39,9 @@ namespace BushcraftBlog.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TagStrings")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TopicStrings")
                         .HasColumnType("nvarchar(max)");
 
@@ -53,7 +56,8 @@ namespace BushcraftBlog.Server.Migrations
                             Content = "Carry at least one Cutting Tool. Preferably more than one!",
                             Heading = "Cutting Tools - be sure to carry one",
                             Name = "First Document on Cutting Tools",
-                            TopicStrings = "cutting tools,axes,saws"
+                            TagStrings = "Cutting Tool",
+                            TopicStrings = "Cutting Tools,Saws,Axes"
                         },
                         new
                         {
@@ -61,7 +65,8 @@ namespace BushcraftBlog.Server.Migrations
                             Content = "A Shelter gives you a place to rest shielded against the elements of nature.",
                             Heading = "Shelters - shield yourself against the elements",
                             Name = "First Document on Shelters",
-                            TopicStrings = "cover,shelter"
+                            TagStrings = "Combustion Device,Cover,Core Temperature",
+                            TopicStrings = "Shelter,Core Temperature"
                         },
                         new
                         {
@@ -69,7 +74,8 @@ namespace BushcraftBlog.Server.Migrations
                             Content = "It´s important to keep an eye on Core Temperature when out in nature.",
                             Heading = "Core Temperature - always stay warm",
                             Name = "First Document on Core Temperature",
-                            TopicStrings = "core temperature,cover"
+                            TagStrings = "Cover,Core Temperature",
+                            TopicStrings = "Shelter,Core Temperature"
                         });
                 });
 
@@ -139,7 +145,7 @@ namespace BushcraftBlog.Server.Migrations
                         {
                             TagId = 8,
                             Description = "Core Temperature is important to keep an eye on.",
-                            Name = "Core Temperatur"
+                            Name = "Core Temperature"
                         });
                 });
 

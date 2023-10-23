@@ -30,7 +30,7 @@ namespace BushcraftBlog.Server.Models
                 new Tag { Name = "Container",            Description = "Container for cooking food and carrying ressources ie. water."},
                 new Tag { Name = "Cordage",              Description = "Cordage for helping in building a shelter."},
                 new Tag { Name = "Cover",                Description = "Shelter for protecting you against the elements of nature."},
-                new Tag { Name = "Core Temperatur",      Description = "Core Temperature is important to keep an eye on."},
+                new Tag { Name = "Core Temperature",     Description = "Core Temperature is important to keep an eye on."},
             };
             #endregion
 
