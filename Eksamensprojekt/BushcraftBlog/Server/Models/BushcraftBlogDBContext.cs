@@ -38,7 +38,9 @@ namespace BushcraftBlog.Server.Models
             modelBuilder.Entity<Topic>().HasData(
                 new Topic { TopicId = 1, Name = topics[0].Name, Description = topics[0].Description },
                 new Topic { TopicId = 2, Name = topics[1].Name, Description = topics[1].Description },
-                new Topic { TopicId = 3, Name = topics[2].Name, Description = topics[2].Description }
+                new Topic { TopicId = 3, Name = topics[2].Name, Description = topics[2].Description },
+                new Topic { TopicId = 4, Name = topics[3].Name, Description = topics[3].Description },
+                new Topic { TopicId = 5, Name = topics[4].Name, Description = topics[4].Description }
             );
 
             modelBuilder.Entity<Tag>().HasData(
@@ -48,7 +50,8 @@ namespace BushcraftBlog.Server.Models
                 new Tag { TagId = 4, Name = tags[3].Name, Description = tags[3].Description },
                 new Tag { TagId = 5, Name = tags[4].Name, Description = tags[4].Description },
                 new Tag { TagId = 6, Name = tags[5].Name, Description = tags[5].Description },
-                new Tag { TagId = 7, Name = tags[6].Name, Description = tags[6].Description }
+                new Tag { TagId = 7, Name = tags[6].Name, Description = tags[6].Description },
+                new Tag { TagId = 8, Name = tags[7].Name, Description = tags[7].Description }
             );
 
             modelBuilder.Entity<Document>()
@@ -86,5 +89,9 @@ namespace BushcraftBlog.Server.Models
             );
             #endregion
         }
+
+        public DbSet<BushcraftBlog.Shared.Models.Topic>? Topic { get; set; }
+
+        public DbSet<BushcraftBlog.Shared.Models.Tag>? Tag { get; set; }
     }
 }
