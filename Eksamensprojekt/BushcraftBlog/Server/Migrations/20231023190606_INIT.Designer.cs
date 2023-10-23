@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BushcraftBlog.Server.Migrations
 {
     [DbContext(typeof(BushcraftBlogDBContext))]
-    [Migration("20231023132257_INIT")]
+    [Migration("20231023190606_INIT")]
     partial class INIT
     {
         /// <inheritdoc />
@@ -33,15 +33,16 @@ namespace BushcraftBlog.Server.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DocumentId"));
 
                     b.Property<string>("Content")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Heading")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TopicStrings")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DocumentId");
@@ -54,21 +55,24 @@ namespace BushcraftBlog.Server.Migrations
                             DocumentId = 1,
                             Content = "Carry at least one Cutting Tool. Preferably more than one!",
                             Heading = "Cutting Tools - be sure to carry one",
-                            Name = "First Document on Cutting Tools"
+                            Name = "First Document on Cutting Tools",
+                            TopicStrings = "cutting tools,axes,saws"
                         },
                         new
                         {
                             DocumentId = 2,
                             Content = "A Shelter gives you a place to rest shielded against the elements of nature.",
                             Heading = "Shelters - shield yourself against the elements",
-                            Name = "First Document on Shelters"
+                            Name = "First Document on Shelters",
+                            TopicStrings = "cover,shelter"
                         },
                         new
                         {
                             DocumentId = 3,
                             Content = "It´s important to keep an eye on Core Temperature when out in nature.",
                             Heading = "Core Temperature - always stay warm",
-                            Name = "First Document on Core Temperature"
+                            Name = "First Document on Core Temperature",
+                            TopicStrings = "core temperature,cover"
                         });
                 });
 
@@ -192,66 +196,6 @@ namespace BushcraftBlog.Server.Migrations
                             Description = "Axes as a topic",
                             Name = "Axes"
                         });
-                });
-
-            modelBuilder.Entity("DocumentTag", b =>
-                {
-                    b.Property<int>("DocumentsDocumentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagsTagId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DocumentsDocumentId", "TagsTagId");
-
-                    b.HasIndex("TagsTagId");
-
-                    b.ToTable("DocumentTag");
-                });
-
-            modelBuilder.Entity("DocumentTopic", b =>
-                {
-                    b.Property<int>("DocumentsDocumentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TopicsTopicId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DocumentsDocumentId", "TopicsTopicId");
-
-                    b.HasIndex("TopicsTopicId");
-
-                    b.ToTable("DocumentTopic");
-                });
-
-            modelBuilder.Entity("DocumentTag", b =>
-                {
-                    b.HasOne("BushcraftBlog.Shared.Models.Document", null)
-                        .WithMany()
-                        .HasForeignKey("DocumentsDocumentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BushcraftBlog.Shared.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsTagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("DocumentTopic", b =>
-                {
-                    b.HasOne("BushcraftBlog.Shared.Models.Document", null)
-                        .WithMany()
-                        .HasForeignKey("DocumentsDocumentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BushcraftBlog.Shared.Models.Topic", null)
-                        .WithMany()
-                        .HasForeignKey("TopicsTopicId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

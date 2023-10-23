@@ -19,8 +19,9 @@ namespace BushcraftBlog.Server.Migrations
                     DocumentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Heading = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Heading = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TopicStrings = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -55,62 +56,14 @@ namespace BushcraftBlog.Server.Migrations
                     table.PrimaryKey("PK_Topic", x => x.TopicId);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "DocumentTag",
-                columns: table => new
-                {
-                    DocumentsDocumentId = table.Column<int>(type: "int", nullable: false),
-                    TagsTagId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DocumentTag", x => new { x.DocumentsDocumentId, x.TagsTagId });
-                    table.ForeignKey(
-                        name: "FK_DocumentTag_Documents_DocumentsDocumentId",
-                        column: x => x.DocumentsDocumentId,
-                        principalTable: "Documents",
-                        principalColumn: "DocumentId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DocumentTag_Tag_TagsTagId",
-                        column: x => x.TagsTagId,
-                        principalTable: "Tag",
-                        principalColumn: "TagId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "DocumentTopic",
-                columns: table => new
-                {
-                    DocumentsDocumentId = table.Column<int>(type: "int", nullable: false),
-                    TopicsTopicId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DocumentTopic", x => new { x.DocumentsDocumentId, x.TopicsTopicId });
-                    table.ForeignKey(
-                        name: "FK_DocumentTopic_Documents_DocumentsDocumentId",
-                        column: x => x.DocumentsDocumentId,
-                        principalTable: "Documents",
-                        principalColumn: "DocumentId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DocumentTopic_Topic_TopicsTopicId",
-                        column: x => x.TopicsTopicId,
-                        principalTable: "Topic",
-                        principalColumn: "TopicId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.InsertData(
                 table: "Documents",
-                columns: new[] { "DocumentId", "Content", "Heading", "Name" },
+                columns: new[] { "DocumentId", "Content", "Heading", "Name", "TopicStrings" },
                 values: new object[,]
                 {
-                    { 1, "Carry at least one Cutting Tool. Preferably more than one!", "Cutting Tools - be sure to carry one", "First Document on Cutting Tools" },
-                    { 2, "A Shelter gives you a place to rest shielded against the elements of nature.", "Shelters - shield yourself against the elements", "First Document on Shelters" },
-                    { 3, "It´s important to keep an eye on Core Temperature when out in nature.", "Core Temperature - always stay warm", "First Document on Core Temperature" }
+                    { 1, "Carry at least one Cutting Tool. Preferably more than one!", "Cutting Tools - be sure to carry one", "First Document on Cutting Tools", "cutting tools,axes,saws" },
+                    { 2, "A Shelter gives you a place to rest shielded against the elements of nature.", "Shelters - shield yourself against the elements", "First Document on Shelters", "cover,shelter" },
+                    { 3, "It´s important to keep an eye on Core Temperature when out in nature.", "Core Temperature - always stay warm", "First Document on Core Temperature", "core temperature,cover" }
                 });
 
             migrationBuilder.InsertData(
@@ -139,32 +92,16 @@ namespace BushcraftBlog.Server.Migrations
                     { 4, "Saws as a topic", "Saws" },
                     { 5, "Axes as a topic", "Axes" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DocumentTag_TagsTagId",
-                table: "DocumentTag",
-                column: "TagsTagId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_DocumentTopic_TopicsTopicId",
-                table: "DocumentTopic",
-                column: "TopicsTopicId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "DocumentTag");
-
-            migrationBuilder.DropTable(
-                name: "DocumentTopic");
+                name: "Documents");
 
             migrationBuilder.DropTable(
                 name: "Tag");
-
-            migrationBuilder.DropTable(
-                name: "Documents");
 
             migrationBuilder.DropTable(
                 name: "Topic");

@@ -12,6 +12,6 @@ namespace BushcraftBlog.Shared.Models
 
         public string? Description { get; set; }
 
-        public virtual ICollection<Document>? Documents { get; set; }
+        //public virtual ICollection<Document>? Documents { get; set; }
     }
 }
