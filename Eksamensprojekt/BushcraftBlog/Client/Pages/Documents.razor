@@ -16,15 +16,39 @@ else
 
     @foreach (var doc in allDocuments)
     {
-@*         <div class="documentCard" @onclick="() => NavigateToSingleDocumentComponent(doc.Id)">
-            <img src="./img/DocumentIconSmall.jpg" /><p>@doc.Name</p>
-        </div> *@
-
         <div class="card bg-dark text-white" @onclick="() => NavigateToSingleDocumentComponent(doc.DocumentId)">
             <img class="card-img" src="./img/cutout01.jpg" alt="@doc.Name">
             <div class="card-img-overlay">
                 <h5 class="card-title">@doc.Name</h5>
                 <p class="card-text">@doc.Heading &hellip;</p>
+                <div class="card-text h-75">
+                    @if (SplitStrings(doc.TopicStrings).Length > 0 || SplitStrings(doc.TagStrings).Length > 0)
+                    {
+                        <div class="d-flex align-items-end h-100">
+                            @if (SplitStrings(doc.TopicStrings).Length > 0)
+                            {
+                                <span class="d-flex align-items-end">
+                                    <b>Topics:</b>
+                                    @foreach (string topic in SplitStrings(doc.TopicStrings))
+                                    {
+                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light">@topic</a>
+                                    }
+                                </span>
+                            }
+                            @if (SplitStrings(doc.TagStrings).Length > 0)
+                            {
+                                <span class="d-flex align-items-end">
+                                    <b>Tags:</b>
+                                    @foreach (string topic in SplitStrings(doc.TagStrings))
+                                    {
+                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light">@topic</a>
+                                    }
+                                </span>
+                            }
+                        </div>
+                    }
+
+                </div>
             </div>
         </div>
     }
@@ -36,6 +60,11 @@ else
     private void NavigateToSingleDocumentComponent(int DocumentId)
     {
         Navigation.NavigateTo($"documents/{DocumentId}");
+    }
+
+    private string[] SplitStrings(string joinedString)
+    {
+        return joinedString.Split(',', StringSplitOptions.RemoveEmptyEntries);
     }
 
     protected override async Task OnInitializedAsync()
