@@ -14,7 +14,9 @@ public class Document
 
     public string? Content { get; set; }
 
-    public string? TopicStrings {  get; set; } 
+    public string? TopicStrings {  get; set; }
+    
+    public string? TagStrings {  get; set; }
 
     //public virtual ICollection<Topic>? Topics { get; set; }
 

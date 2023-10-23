@@ -61,33 +61,24 @@ namespace BushcraftBlog.Server.Models
                         Name = "First Document on Cutting Tools",
                         Heading = "Cutting Tools - be sure to carry one",
                         Content = "Carry at least one Cutting Tool. Preferably more than one!",
-                        TopicStrings = "cutting tools," + "axes," + "saws"
-                        //Topics = null,
-                        //Tags = null,
-                        //Topics = new[] { topics[0], topics[3], topics[4] },
-                        //Tags = new[] { tags[2] }
+                        TopicStrings = string.Join(',', new string[] { topics[0].Name, topics[3].Name, topics[4].Name }),
+                        TagStrings = string.Join(',', new string[] { tags[2].Name })
                     },
                     new Document {
                         DocumentId = 2,
                         Name = "First Document on Shelters",
                         Heading = "Shelters - shield yourself against the elements",
                         Content = "A Shelter gives you a place to rest shielded against the elements of nature.",
-                        TopicStrings = "cover," +"shelter"
-                        //Topics = null,
-                        //Tags = null,
-                        //Topics = new[] { topics[1], topics[2] },
-                        //Tags = new[] { tags[3], tags[6], tags[7] }
+                        TopicStrings = string.Join(',', new string[] { topics[1].Name, topics[2].Name }),
+                        TagStrings = string.Join(',', new string[] { tags[3].Name, tags[6].Name, tags[7].Name })
                     },
                     new Document {
                         DocumentId = 3,
                         Name = "First Document on Core Temperature",
                         Heading = "Core Temperature - always stay warm",
                         Content = "It´s important to keep an eye on Core Temperature when out in nature.",
-                        TopicStrings = "core temperature," + "cover"
-                        //Topics = null,
-                        //Tags = null,
-                        //Topics = new[] { topics[1], topics[2] },
-                        //Tags = new[] { tags[6], tags[7] }
+                        TopicStrings = string.Join(',', new string[] { topics[1].Name, topics[2].Name }),
+                        TagStrings = string.Join(',', new string[] { tags[6].Name, tags[7].Name })
                     }
                 );
             #endregion
