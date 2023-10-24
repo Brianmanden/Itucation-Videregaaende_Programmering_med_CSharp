@@ -16,10 +16,10 @@ namespace BushcraftBlog.Server.Models
             #region Declaring Dummy Data
             Topic[] topics = new Topic[] {
                 new Topic { Name = "Cutting Tools",     Description = "Cutting Tools as a topic in general." },
-                new Topic { Name = "Shelter",           Description = "Shelters as a topic." },
+                new Topic { Name = "Shelters",          Description = "Shelters as a topic." },
                 new Topic { Name = "Core Temperature",  Description = "Core Temperature as a topic." },
-                new Topic { Name = "Saws",              Description = "Saws as a topic" },
-                new Topic { Name = "Axes",              Description = "Axes as a topic" },
+                new Topic { Name = "Saws",              Description = "Saws as a topic." },
+                new Topic { Name = "Axes",              Description = "Axes as a topic." },
             };
 
             Tag[] tags = new Tag[] {
