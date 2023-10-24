@@ -1,0 +1,52 @@
+﻿@page "/documents/crud"
+@inject HttpClient Http;
+@inject NavigationManager Navigation
+@using BushcraftBlog.Shared.Models;
+
+<h2>List of Bushcraft Documents</h2>
+
+@if (allDocuments == null)
+{
+    <p>Fetching documents</p>
+}
+else
+{
+    <h3>There are currently @allDocuments.Length Bushcraft Documents in the Blog</h3>
+
+    @foreach (var doc in allDocuments)
+    {
+        <div class="card bg-dark text-white">
+            <h5 class="card-title">@doc.Name</h5>
+            <p class="card-text">@doc.Heading</p>
+            <button class="btn btn-outline-danger" @onclick="() => DeleteDocument(doc.DocumentId)">Delete Document</button>
+        </div>
+    }
+}
+
+@code {
+    private Document[]? allDocuments;
+
+    private void NavigateToSingleDocumentComponent(int DocumentId)
+    {
+        Navigation.NavigateTo($"documents/{DocumentId}");
+    }
+
+    private async void DeleteDocument(int DocumentId)
+    {
+        using var response = await Http.DeleteAsync($"api/documents/{DocumentId}");
+
+        Navigation.NavigateTo("/documents/crud", true);
+
+        // StateHasChanged();
+    }
+
+    private string[] SplitStrings(string joinedString)
+    {
+        return joinedString.Split(',', StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        allDocuments = await Http.GetFromJsonAsync<Document[]>("api/documents");
+    }
+}
