@@ -80,7 +80,7 @@ namespace BushcraftBlog.Server.Models
                         DocumentId = 3,
                         Name = "First Document on Core Temperature",
                         Heading = "Core Temperature - keep it within comfortable limits",
-                        DocumentImage = "Ilustration_V2_A_stylistic_logo_of_a_bonfire_where_an_open_boo_2,jpg",
+                        DocumentImage = "bonfire.jpg",
                         Content = "It´s important to keep an eye on Core Temperature when out in nature. If you get too cold in the winter season you risk getting pneumonia and if you get too hot in the summer time you risk getting dehydrated.",
                         TopicStrings = string.Join(',', new string[] { topics[1].Name, topics[2].Name }),
                         TagStrings = string.Join(',', new string[] { tags[6].Name, tags[7].Name }),
