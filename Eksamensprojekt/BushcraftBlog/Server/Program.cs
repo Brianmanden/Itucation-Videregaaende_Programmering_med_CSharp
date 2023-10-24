@@ -4,11 +4,20 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-builder.Services.AddDbContext<BushcraftBlogDBContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("BushcraftBlogDB")));
+var connection = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+    connection = builder.Configuration.GetConnectionString("BushcraftBlogDB");
+}
+else
+{
+    connection = Environment.GetEnvironmentVariable("BushcraftBlogDB");
+}
+builder.Services.AddDbContext<BushcraftBlogDBContext>(options => options.UseSqlServer(connection));
 
 var app = builder.Build();
 
