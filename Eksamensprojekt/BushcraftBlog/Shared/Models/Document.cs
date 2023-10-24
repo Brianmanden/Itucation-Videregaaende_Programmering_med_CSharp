@@ -12,11 +12,15 @@ public class Document
 
     public string? Heading { get; set; }
 
+    public string? DocumentImage { get; set; }
+
     public string? Content { get; set; }
 
     public string? TopicStrings {  get; set; }
     
     public string? TagStrings {  get; set; }
+
+    public string? ExternalSourcesStrings { get; set; }
 
     //public virtual ICollection<Topic>? Topics { get; set; }
 
