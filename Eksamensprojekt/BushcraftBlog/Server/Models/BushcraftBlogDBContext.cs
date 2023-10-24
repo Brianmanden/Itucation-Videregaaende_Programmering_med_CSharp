@@ -60,25 +60,31 @@ namespace BushcraftBlog.Server.Models
                         DocumentId = 1,
                         Name = "First Document on Cutting Tools",
                         Heading = "Cutting Tools - be sure to carry one",
+                        DocumentImage = "KnifeAxeBowsaw.jpg",
                         Content = "Carry at least one Cutting Tool. Preferably more than one!",
                         TopicStrings = string.Join(',', new string[] { topics[0].Name, topics[3].Name, topics[4].Name }),
-                        TagStrings = string.Join(',', new string[] { tags[2].Name })
+                        TagStrings = string.Join(',', new string[] { tags[2].Name }),
+                        ExternalSourcesStrings = string.Join(',', new string[] { "https://www.youtube.com/watch?v=5UeIgzd8oto", "https://www.youtube.com/watch?v=uK7l2JsI61c", "https://www.youtube.com/watch?v=eoRODhOMcUk" })
                     },
                     new Document {
                         DocumentId = 2,
                         Name = "First Document on Shelters",
                         Heading = "Shelters - shield yourself against the elements",
+                        DocumentImage = "BushcraftShelter.jpg",
                         Content = "A Shelter gives you a place to rest shielded against the elements of nature.",
                         TopicStrings = string.Join(',', new string[] { topics[1].Name, topics[2].Name }),
-                        TagStrings = string.Join(',', new string[] { tags[3].Name, tags[6].Name, tags[7].Name })
+                        TagStrings = string.Join(',', new string[] { tags[3].Name, tags[6].Name, tags[7].Name }),
+                        ExternalSourcesStrings = string.Join(',', new string[] { "https://www.youtube.com/watch?v=-_ve7ExM29Y", "https://www.youtube.com/watch?v=ZV92xni5q8w", "https://www.youtube.com/watch?v=MITdT_we1WE" })
                     },
                     new Document {
                         DocumentId = 3,
                         Name = "First Document on Core Temperature",
-                        Heading = "Core Temperature - always stay warm",
-                        Content = "It´s important to keep an eye on Core Temperature when out in nature.",
+                        Heading = "Core Temperature - keep it within comfortable limits",
+                        DocumentImage = "Ilustration_V2_A_stylistic_logo_of_a_bonfire_where_an_open_boo_2,jpg",
+                        Content = "It´s important to keep an eye on Core Temperature when out in nature. If you get too cold in the winter season you risk getting pneumonia and if you get too hot in the summer time you risk getting dehydrated.",
                         TopicStrings = string.Join(',', new string[] { topics[1].Name, topics[2].Name }),
-                        TagStrings = string.Join(',', new string[] { tags[6].Name, tags[7].Name })
+                        TagStrings = string.Join(',', new string[] { tags[6].Name, tags[7].Name }),
+                        ExternalSourcesStrings = string.Join (',', new string[] { "https://www.youtube.com/watch?v=7KojHvHCrjE", "https://www.youtube.com/watch?v=ysw6CEbSiak", "https://www.youtube.com/watch?v=B_vqXkCe-r4" })
                     }
                 );
             #endregion
