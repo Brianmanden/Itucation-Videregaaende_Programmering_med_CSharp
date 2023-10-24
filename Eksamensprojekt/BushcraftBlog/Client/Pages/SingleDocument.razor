@@ -31,7 +31,7 @@ else
                                 <b>Topics:</b>
                                 @foreach (string topic in SplitStrings(document.TopicStrings))
                                 {
-                                    <a href="#" class="mx-1 btn btn-sm btn-outline-dark">@topic</a>
+                                    <a href="#" class="mx-1 btn btn-sm btn-outline-dark topicsTagsBtn">@topic</a>
                                 }
                             </span>
                         }
@@ -41,13 +41,25 @@ else
                                 <b>Tags:</b>
                                 @foreach (string topic in SplitStrings(document.TagStrings))
                                 {
-                                    <a href="#" class="mx-1 btn btn-sm btn-outline-dark">@topic</a>
+                                    <a href="#" class="mx-1 btn btn-sm btn-outline-dark topicsTagsBtn">@topic</a>
                                 }
                             </span>
                         }
                     </div>
                 }
+                @if (SplitStrings(document.ExternalSourcesStrings).Length > 0)
+                {
+                    <br />
+                    <hr />
 
+                    <b>Learn More:</b>
+                    <span class="d-flex align-items-end">
+                        @foreach (string externalRessource in SplitStrings(document.ExternalSourcesStrings))
+                        {
+                            <a class="mx-1 fs-6 btn btn-sm btn-outline-primary" href="@externalRessource" target="_blank">@externalRessource</a>
+                        }
+                    </span>
+                }
             </div>
         </div>
     </div>

@@ -31,7 +31,7 @@ else
                                     <b>Topics:</b>
                                     @foreach (string topic in SplitStrings(doc.TopicStrings))
                                     {
-                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light">@topic</a>
+                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light topicsTagsBtn">@topic</a>
                                     }
                                 </span>
                             }
@@ -41,7 +41,7 @@ else
                                     <b>Tags:</b>
                                     @foreach (string topic in SplitStrings(doc.TagStrings))
                                     {
-                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light">@topic</a>
+                                        <a href="#" class="mx-1 btn btn-sm btn-outline-light topicsTagsBtn">@topic</a>
                                     }
                                 </span>
                             }
