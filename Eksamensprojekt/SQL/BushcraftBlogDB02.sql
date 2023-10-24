@@ -9,8 +9,8 @@ FROM [BushcraftBlogDB].[dbo].[Topic]
 SELECT TOP (1000) *
 FROM [BushcraftBlogDB].[dbo].[Tag]
 
-SELECT TOP (1000) *
-FROM [BushcraftBlogDB].[dbo].[DocumentTag]
+--SELECT TOP (1000) *
+--FROM [BushcraftBlogDB].[dbo].[DocumentTag]
 
-SELECT TOP (1000) *
-FROM [BushcraftBlogDB].[dbo].[DocumentTopic]
+--SELECT TOP (1000) *
+--FROM [BushcraftBlogDB].[dbo].[DocumentTopic]
