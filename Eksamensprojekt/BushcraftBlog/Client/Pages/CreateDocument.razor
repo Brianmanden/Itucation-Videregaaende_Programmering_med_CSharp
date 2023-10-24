@@ -1,0 +1,65 @@
+﻿@page "/documents/create"
+@inject HttpClient Http;
+@inject NavigationManager Navigation
+@using BushcraftBlog.Shared.Models;
+
+<EditForm EditContext="@editContext" Model="@NewDocument" OnSubmit="@Submit">
+@*     <DataAnnotationsValidator />
+    <ValidationSummary /> *@
+    
+    <div>
+        <label>
+            Name:
+            <InputText @bind-Value="NewDocument.Name" />
+        </label>
+    </div>
+    <div>
+        <label>
+            Heading (optional):
+            <InputText @bind-Value="NewDocument.Heading" />
+        </label>
+    </div>
+
+    <button type="submit">Submit</button>
+
+</EditForm>
+
+<InputText @bind-Value="someVal" />
+
+
+@code {
+    private EditContext editContext;
+
+    [Parameter]
+    public string someVal { get; set; } = "not set";
+
+    [Parameter]
+    public Document?  NewDocument { get; set; }
+
+    private void Submit()
+    {
+        var bp = "";
+        someVal = "submitted";
+    }
+
+    protected override void OnInitialized()
+    {
+        NewDocument ??= new Document();
+    }
+}
+
+
+@*     [Required]
+    public string Name { get; set; }
+
+    public string? Heading { get; set; }
+
+    public string? DocumentImage { get; set; }
+
+    public string? Content { get; set; }
+
+    public string? TopicStrings {  get; set; }
+
+    public string? TagStrings {  get; set; }
+
+    public string? ExternalSourcesStrings { get; set; } *@
