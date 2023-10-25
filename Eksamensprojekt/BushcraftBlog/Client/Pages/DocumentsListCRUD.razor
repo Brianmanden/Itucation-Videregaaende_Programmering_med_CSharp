@@ -26,7 +26,8 @@ else
                 <h5 class="card-title">@doc.Name</h5>
                 <p class="card-text">@doc.Heading</p>
 
-                <button class="btn btn-outline-danger" @onclick="() => ModalDialog.Open(doc.DocumentId, doc.Name)">Delete Document</button>
+                <button class="btn btn-outline-primary" @onclick="() => NavigateToEditSingleDocumentComponent(doc.DocumentId)">Edit Document</button>
+                <button class="float-end btn btn-outline-danger" @onclick="() => ModalDialog.Open(doc.DocumentId, doc.Name)">Delete Document</button>
             </div>
         </div>
         <ModalDialog @ref="@ModalDialog" />
@@ -42,6 +43,11 @@ else
     private void NavigateToSingleDocumentComponent(int DocumentId)
     {
         Navigation.NavigateTo($"documents/{DocumentId}");
+    }
+
+    private void NavigateToEditSingleDocumentComponent(int documentId)
+    {
+        Navigation.NavigateTo($"documents/{documentId}/edit", true);
     }
 
     private string[] SplitStrings(string joinedString)

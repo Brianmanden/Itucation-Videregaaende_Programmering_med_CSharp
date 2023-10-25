@@ -1,0 +1,86 @@
+﻿@page "/documents/{documentId:int}/edit"
+@using BushcraftBlog.Shared.Models;
+@using System.ComponentModel.DataAnnotations;
+@inject HttpClient Http;
+@inject NavigationManager Navigation
+
+@* //TODO: public string? DocumentImage { get; set; } *@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col>">
+            <p>@documentId -1- </p>
+
+@*             <EditForm Model="newDocument" OnValidSubmit="OnFormValid" OnInvalidSubmit="OnFormInValid">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+                <div class="form-floating mb-3">
+                    <InputText class="form-control" id="name" @bind-Value="newDocument.Name" placeholder="Enter new Document Name"></InputText>
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <InputText class="form-control" id="heading" @bind-Value="newDocument.Heading" placeholder="(Optional) Enter Heading"></InputText>
+                    <label for="heading">Heading</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <InputTextArea class="form-control" id="content" @bind-Value="newDocument.Content" placeholder="(Optional) Enter new Document Content"></InputTextArea>
+                    <label for="content">Content</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <InputText class="form-control" id="topicStrings" @bind-Value="newDocument.TopicStrings" placeholder="(Optional) Enter new Document TopicStrings (Separated with comma)"></InputText>
+                    <label for="topicStrings">TopicStrings</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <InputText class="form-control" id="tagStrings" @bind-Value="newDocument.TagStrings" placeholder="(Optional) Enter new Document TagStrings (Separated with comma)"></InputText>
+                    <label for="tagStrings">TagStrings</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <InputText class="form-control" id="externalSourcesStrings" @bind-Value="newDocument.ExternalSourcesStrings" placeholder="(Optional) Enter new Document ExternalSourcesStrings (Separated with comma)"></InputText>
+                    <label for="externalSourcesStrings">ExternalSourcesStrings</label>
+                </div>
+
+                <button class="btn btn-outline-primary" type="submit">Create Document</button>
+
+            </EditForm> *@
+        </div>
+    </div>
+</div>
+
+@code {
+    // Document newDocument = new Document {
+    //         TagStrings = "",
+    //         TopicStrings = ""
+    // };
+
+    private Dictionary<string, object> inputTextAreaAttributes = new Dictionary<string, object>();
+
+    // private async void OnFormValid()
+    // {
+    //     Console.WriteLine("FORM SUBMITTED; GOOD JOB");
+
+    //     CancellationToken cancellationToken = CancellationToken.None;
+    //     var thing = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
+
+    //     using var response = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
+
+    //     var createdDocument = await response.Content.ReadFromJsonAsync<Document>();
+    //     Console.WriteLine(createdDocument);
+    //     Navigation.NavigateTo("/documents");
+    // }
+
+    // private void OnFormInValid()
+    // {
+    //     Console.WriteLine("FORM INVALID; KEEP TRYING");
+    // }
+
+    [Parameter]
+    public int documentId { get; set; }
+
+    protected override void OnInitialized()
+    {
+        inputTextAreaAttributes.Add("rows", 30);
+        inputTextAreaAttributes.Add("class", "form-control");
+        inputTextAreaAttributes.Add("id", "content");
+        inputTextAreaAttributes.Add("placeholder", "(Optional) Edit Document Content");
+    }
+}
