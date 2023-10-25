@@ -20,12 +20,14 @@ else
             <img class="card-img" src="./img/cutout01.jpg" alt="@doc.Name">
             <div class="card-img-overlay">
                 <h5 class="card-title">@doc.Name</h5>
-                <p class="card-text">@doc.Heading &hellip;</p>
+@*                 @if(doc.Heading != null && doc.Heading.Length > 0){
+                    <p class="card-text">@doc!.Heading!.Substring(0, 50)&hellip;</p>
+                } *@
                 <div class="card-text h-75">
                     @if ((SplitStrings(doc.TopicStrings).Length > 0 && doc.TopicStrings != null) || (SplitStrings(doc.TagStrings).Length > 0 && doc.TagStrings != null))
                     {
                         <div class="d-flex align-items-end h-100">
-                            @if (SplitStrings(doc.TopicStrings).Length > 0)
+                            @if (SplitStrings(doc.TopicStrings!).Length > 0 && doc.TopicStrings != null)
                             {
                                 <span class="d-flex align-items-end">
                                     <b>Topics:</b>
@@ -35,7 +37,7 @@ else
                                     }
                                 </span>
                             }
-                            @if (SplitStrings(doc.TagStrings).Length > 0)
+                            @if (SplitStrings(doc.TagStrings!).Length > 0)
                             {
                                 <span class="d-flex align-items-end">
                                     <b>Tags:</b>
