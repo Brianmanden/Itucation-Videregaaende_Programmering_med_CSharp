@@ -60,6 +60,7 @@
 
         var createdDocument = await response.Content.ReadFromJsonAsync<Document>();
         Console.WriteLine(createdDocument);
+        Navigation.NavigateTo("/documents");
     }
 
     private void OnFormInValid()
