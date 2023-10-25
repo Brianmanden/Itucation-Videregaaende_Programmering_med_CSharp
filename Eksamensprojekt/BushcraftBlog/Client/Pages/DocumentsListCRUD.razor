@@ -13,31 +13,35 @@ else
 {
     <h3>There are currently @allDocuments.Length Bushcraft Documents in the Blog</h3>
 
+    int theId;
+    string theName;
+
     @foreach (var doc in allDocuments)
     {
-        <div class="card bg-dark text-white">
-            <h5 class="card-title">@doc.Name</h5>
-            <p class="card-text">@doc.Heading</p>
-            <button class="btn btn-outline-danger" @onclick="() => DeleteDocument(doc.DocumentId)">Delete Document</button>
+        theId = doc.DocumentId;
+        theName = doc.Name;
+
+        <div class="w-50 card bg-light text-black-50">
+            <div class="card-body">
+                <h5 class="card-title">@doc.Name</h5>
+                <p class="card-text">@doc.Heading</p>
+
+                <button class="btn btn-primary" @onclick="() => ModalDialog.Open(doc.DocumentId, doc.Name)">Delete Document: @theName</button>
+            </div>
         </div>
+        <ModalDialog @ref="@ModalDialog" />
     }
 }
 
 @code {
+
+    private ModalDialog ModalDialog { get; set; }
+
     private Document[]? allDocuments;
 
     private void NavigateToSingleDocumentComponent(int DocumentId)
     {
         Navigation.NavigateTo($"documents/{DocumentId}");
-    }
-
-    private async void DeleteDocument(int DocumentId)
-    {
-        using var response = await Http.DeleteAsync($"api/documents/{DocumentId}");
-
-        Navigation.NavigateTo("/documents/crud", true);
-
-        // StateHasChanged();
     }
 
     private string[] SplitStrings(string joinedString)
