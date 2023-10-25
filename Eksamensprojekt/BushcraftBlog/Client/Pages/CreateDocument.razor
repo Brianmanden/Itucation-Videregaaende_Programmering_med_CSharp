@@ -45,7 +45,10 @@
 </div>
 
 @code {
-    Document newDocument = new Document();
+    Document newDocument = new Document {
+            TagStrings = "",
+            TopicStrings = ""
+    };
 
     private Dictionary<string, object> inputTextAreaAttributes = new Dictionary<string, object>();
 
