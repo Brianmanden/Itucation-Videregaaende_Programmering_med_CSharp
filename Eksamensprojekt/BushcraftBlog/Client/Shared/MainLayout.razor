@@ -2,16 +2,31 @@
 
 <div class="page">
     <div class="sidebar">
-        <NavMenu />
+        <div class="form-check form-switch d-flex flex-row bd-highlight" style="margin: unset; padding: unset;">
+            <div class="p-2 flex-fill bd-highlight text-white"><span style=@(!isAdmin ? "text-decoration: underline;":"text-decoration: none;")>Public</span></div>
+            <div class="p-2 flex-fill bd-highlight"><input class="form-check-input" style="margin: unset; padding: unset;" type="checkbox" id="flexSwitchCheckChecked" @bind="isAdmin"></div>
+            <div class="p-2 flex-fill bd-highlight text-white"><span style=@(isAdmin ? "text-decoration: underline;":"text-decoration: none;")>Is Admin</span></div>
+        </div>
+
+        @if (isAdmin)
+        {
+            <NavMenuAdmin />
+        }
+        else
+        {
+            <NavMenu />
+        }
+
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code {
+    private bool isAdmin { get; set; } = false;
+
+}
