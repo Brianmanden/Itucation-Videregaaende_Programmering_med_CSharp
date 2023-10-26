@@ -9,6 +9,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col>">
+            <h3>Create Document</h3>
             <EditForm Model="newDocument" OnValidSubmit="OnFormValid" OnInvalidSubmit="OnFormInValid">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
@@ -56,12 +57,9 @@
     {
         Console.WriteLine("CreateDocument - Valid Form");
 
-        CancellationToken cancellationToken = CancellationToken.None;
+        using var response = await Http.PostAsJsonAsync("api/Documents", newDocument);
+        response.EnsureSuccessStatusCode();
 
-        using var response = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
-
-        var createdDocument = await response.Content.ReadFromJsonAsync<Document>();
-        Console.WriteLine(createdDocument);
         Navigation.NavigateTo("/documents");
     }
 
