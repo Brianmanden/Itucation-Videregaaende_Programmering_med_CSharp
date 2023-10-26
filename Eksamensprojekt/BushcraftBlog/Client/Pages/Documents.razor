@@ -12,7 +12,18 @@
 }
 else
 {
-    <h3>Here are @allDocuments.Length Bushcraft Documents for you 🙂👍</h3>
+    if (allDocuments.Length == 0)
+    {
+        <h3>There are no Bushcraft Documents... yet. Ask an editor to create some.</h3>
+    }
+    if (allDocuments.Length == 1)
+    {
+        <h3>Here is one @allDocuments.Length Bushcraft Document for you 🙂👍</h3>
+    }
+    else
+    {
+        <h3>Here are @allDocuments.Length Bushcraft Documents for you 🙂👍</h3>
+    }
 
     @foreach (var doc in allDocuments)
     {
