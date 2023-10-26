@@ -54,10 +54,9 @@
 
     private async void OnFormValid()
     {
-        Console.WriteLine("FORM SUBMITTED; GOOD JOB");
+        Console.WriteLine("CreateDocument - Valid Form");
 
         CancellationToken cancellationToken = CancellationToken.None;
-        var thing = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
 
         using var response = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
 
@@ -68,7 +67,7 @@
 
     private void OnFormInValid()
     {
-        Console.WriteLine("FORM INVALID; KEEP TRYING");
+        Console.WriteLine("CreateDocument - Invalid Form");
     }
 
     protected override void OnInitialized()
