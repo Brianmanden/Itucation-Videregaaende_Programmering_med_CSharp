@@ -48,10 +48,28 @@
                     <div class="form-floating mb-3">
                         <InputText class="form-control" id="topicStrings" @bind-Value="documentToEdit.TopicStrings" placeholder="(Optional) Enter new Document TopicStrings (Separated with comma)"></InputText>
                         <label for="topicStrings">TopicStrings</label>
+                        @* // TODO / WIP *@
+                        @if (documentToEdit.TopicStrings != null && !string.IsNullOrEmpty(documentToEdit.TopicStrings))
+                        {                        
+                            @foreach (var topic in SplitStrings(documentToEdit.TopicStrings))
+                            {
+                                <span class="badge bg-primary fs-6 d-inline-block ps-3 pe-5">@topic</span>
+                                <span class="d-inline-block tagTopicsBadge pointer text-light fs-4">&times;</span>
+                            }
+                        }
                     </div>
                     <div class="form-floating mb-3">
                         <InputText class="form-control" id="tagStrings" @bind-Value="documentToEdit.TagStrings" placeholder="(Optional) Enter new Document TagStrings (Separated with comma)"></InputText>
                         <label for="tagStrings">TagStrings</label>
+                        @* // TODO / WIP *@
+                        @if (documentToEdit.TagStrings != null && !string.IsNullOrEmpty(documentToEdit.TagStrings))
+                        {
+                            @foreach (var tag in SplitStrings(documentToEdit.TagStrings))
+                            {
+                                <span class="badge bg-primary fs-6 d-inline-block ps-3 pe-5">@tag</span>
+                                <span class="d-inline-block tagTopicsBadge pointer text-light fs-4">&times;</span>
+                            }
+                        }
                     </div>
                     <div class="form-floating mb-3">
                         <InputText class="form-control" id="externalSourcesStrings" @bind-Value="documentToEdit.ExternalSourcesStrings" placeholder="(Optional) Enter new Document ExternalSourcesStrings (Separated with comma)"></InputText>
@@ -91,6 +109,10 @@
     [Parameter]
     public int documentId { get; set; }
 
+    private string[] SplitStrings(string joinedString)
+    {
+        return joinedString.Split(',', StringSplitOptions.RemoveEmptyEntries);
+    }
 
     protected override async void OnInitialized()
     {
@@ -109,6 +131,5 @@
         {
             Console.WriteLine("documentId is NULL !");
         }
-     
     }
 }

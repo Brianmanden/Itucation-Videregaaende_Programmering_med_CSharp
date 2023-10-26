@@ -20,3 +20,18 @@
 .pointer {
     cursor: pointer;
 }
+
+.tagTopicsBadge {
+    left: -35px;
+    position: relative;
+    top: 3px;
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out;
+    z-index: 100;
+}
+
+.tagTopicsBadge:hover {
+    font-size: 120%;
+    font-weight: bolder;
+    transform: scale(1.5);
+    transition: transform 0.3s ease-out, font-size 0.3s ease-out;
+}
