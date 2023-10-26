@@ -1,6 +1,8 @@
 ﻿@page "/documents/{documentId:int}/edit"
 @using BushcraftBlog.Shared.Models;
 @using System.ComponentModel.DataAnnotations;
+@using System.Text;
+@using System.Text.Json;
 @inject HttpClient Http;
 @inject NavigationManager Navigation
 
@@ -9,78 +11,104 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col>">
-            <p>@documentId -1- </p>
+            @if (documentToEdit == null)
+            {
+                <h3>Fetching document...</h3>
+                <div class="spinner-border text-dark" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            }
+            else
+            {
+                <h3>Edit Document</h3>
+                <EditForm Model="documentToEdit" OnValidSubmit="OnFormValid" OnInvalidSubmit="OnFormInValid">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
 
-@*             <EditForm Model="newDocument" OnValidSubmit="OnFormValid" OnInvalidSubmit="OnFormInValid">
-                <DataAnnotationsValidator />
-                <ValidationSummary />
-                <div class="form-floating mb-3">
-                    <InputText class="form-control" id="name" @bind-Value="newDocument.Name" placeholder="Enter new Document Name"></InputText>
-                    <label for="name">Name</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText class="form-control" id="heading" @bind-Value="newDocument.Heading" placeholder="(Optional) Enter Heading"></InputText>
-                    <label for="heading">Heading</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputTextArea class="form-control" id="content" @bind-Value="newDocument.Content" placeholder="(Optional) Enter new Document Content"></InputTextArea>
-                    <label for="content">Content</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText class="form-control" id="topicStrings" @bind-Value="newDocument.TopicStrings" placeholder="(Optional) Enter new Document TopicStrings (Separated with comma)"></InputText>
-                    <label for="topicStrings">TopicStrings</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText class="form-control" id="tagStrings" @bind-Value="newDocument.TagStrings" placeholder="(Optional) Enter new Document TagStrings (Separated with comma)"></InputText>
-                    <label for="tagStrings">TagStrings</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <InputText class="form-control" id="externalSourcesStrings" @bind-Value="newDocument.ExternalSourcesStrings" placeholder="(Optional) Enter new Document ExternalSourcesStrings (Separated with comma)"></InputText>
-                    <label for="externalSourcesStrings">ExternalSourcesStrings</label>
-                </div>
+                    <div class="form-floating mb-3">
+                        @* <InputText class="form-control" id="DocumentId" @bind-Value="documentToEdit.DocumentId" disabled></InputText> *@
+                        <label for="name">DocumentId: @documentId</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="name" @bind-Value="documentToEdit.Name" placeholder="Enter new Document Name"></InputText>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="name" @bind-Value="documentToEdit.DocumentImage" placeholder="bonfire.jpg"></InputText>
+                        <label for="name">DocumentImage</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="heading" @bind-Value="documentToEdit.Heading" placeholder="(Optional) Enter Heading"></InputText>
+                        <label for="heading">Heading</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputTextArea class="form-control" id="content" @bind-Value="documentToEdit.Content" placeholder="(Optional) Enter new Document Content"></InputTextArea>
+                        <label for="content">Content</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="topicStrings" @bind-Value="documentToEdit.TopicStrings" placeholder="(Optional) Enter new Document TopicStrings (Separated with comma)"></InputText>
+                        <label for="topicStrings">TopicStrings</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="tagStrings" @bind-Value="documentToEdit.TagStrings" placeholder="(Optional) Enter new Document TagStrings (Separated with comma)"></InputText>
+                        <label for="tagStrings">TagStrings</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <InputText class="form-control" id="externalSourcesStrings" @bind-Value="documentToEdit.ExternalSourcesStrings" placeholder="(Optional) Enter new Document ExternalSourcesStrings (Separated with comma)"></InputText>
+                        <label for="externalSourcesStrings">ExternalSourcesStrings</label>
+                    </div>
 
-                <button class="btn btn-outline-primary" type="submit">Create Document</button>
+                    <button class="btn btn-outline-primary" type="submit">Done Editing Document</button>
+                </EditForm>
+            }
 
-            </EditForm> *@
         </div>
     </div>
 </div>
 
 @code {
-    // Document newDocument = new Document {
-    //         TagStrings = "",
-    //         TopicStrings = ""
-    // };
-
+    private Document documentToEdit { get; set; }
     private Dictionary<string, object> inputTextAreaAttributes = new Dictionary<string, object>();
 
-    // private async void OnFormValid()
-    // {
-    //     Console.WriteLine("FORM SUBMITTED; GOOD JOB");
+    private async void OnFormValid()
+    {
+        Console.WriteLine("EditDocument - Valid Form");
 
-    //     CancellationToken cancellationToken = CancellationToken.None;
-    //     var thing = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
+        string serializedDocument = JsonSerializer.Serialize(documentToEdit);
+        StringContent requestContent = new StringContent(serializedDocument, Encoding.UTF8, "application/json");
 
-    //     using var response = await Http.PostAsJsonAsync("api/Documents", newDocument, cancellationToken);
+        var response = await Http.PutAsync($"api/Documents/{documentId}", requestContent);
+        response.EnsureSuccessStatusCode();
 
-    //     var createdDocument = await response.Content.ReadFromJsonAsync<Document>();
-    //     Console.WriteLine(createdDocument);
-    //     Navigation.NavigateTo("/documents");
-    // }
+        Navigation.NavigateTo("/documents", true);
+    }
 
-    // private void OnFormInValid()
-    // {
-    //     Console.WriteLine("FORM INVALID; KEEP TRYING");
-    // }
+    private void OnFormInValid()
+    {
+        Console.WriteLine("EditDocument - Invalid Form");
+    }
 
     [Parameter]
     public int documentId { get; set; }
 
-    protected override void OnInitialized()
+
+    protected override async void OnInitialized()
     {
         inputTextAreaAttributes.Add("rows", 30);
         inputTextAreaAttributes.Add("class", "form-control");
         inputTextAreaAttributes.Add("id", "content");
         inputTextAreaAttributes.Add("placeholder", "(Optional) Edit Document Content");
+
+        if (documentId != null)
+        {
+            documentToEdit = await Http.GetFromJsonAsync<Document>($"api/Documents/{documentId}");
+            Console.WriteLine(documentToEdit.Heading);
+            Console.WriteLine(documentToEdit.Name);
+            StateHasChanged();
+        }else
+        {
+            Console.WriteLine("documentId is NULL !");
+        }
+     
     }
 }
