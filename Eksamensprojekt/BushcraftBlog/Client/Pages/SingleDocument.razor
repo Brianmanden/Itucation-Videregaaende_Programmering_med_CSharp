@@ -12,11 +12,12 @@
 }
 else
 {
+    <button type="button" class="btn btn-outline-secondary my-4" @onclick='() => Navigation.NavigateTo("/documents")'>Back to List&hellip;</button>
     <div class="card bg-light bg-gradient bg-opacity-25 text-black-50">
-        <div class="card-header">@document.Name</div>
+        <h2 class="card-header">@document.Name</h2>
         @if (document.DocumentImage != null)
         {
-            <img class="card-img" src="./img/@document.DocumentImage">
+            <img class="card-img-top" src="./img/@document.DocumentImage">
         }
         <div class="card-body">
             <h5 class="card-title">@document.Heading</h5>
@@ -52,7 +53,7 @@ else
                     <br />
                     <hr />
 
-                    <b>Learn More:</b>
+                    <b class="p-2 d-inline-block">Learn More:</b>
                     <span class="d-flex align-items-end">
                         @foreach (string externalRessource in SplitStrings(document.ExternalSourcesStrings))
                         {
@@ -63,6 +64,7 @@ else
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-outline-secondary my-5" @onclick='() => Navigation.NavigateTo("/documents")'>Back to List&hellip;</button>
 }
 
 
