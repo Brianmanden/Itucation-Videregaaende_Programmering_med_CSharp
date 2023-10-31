@@ -8,6 +8,10 @@ namespace BushcraftBlog.Server.Models
         public BushcraftBlogDBContext(DbContextOptions<BushcraftBlogDBContext> options) : base(options){}
 
         public DbSet<Document> Documents { get; set; }
+        
+        public DbSet<Topic>? Topic { get; set; }
+
+        public DbSet<Tag>? Tag { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -89,9 +93,5 @@ namespace BushcraftBlog.Server.Models
                 );
             #endregion
         }
-
-        public DbSet<Topic>? Topic { get; set; }
-
-        public DbSet<Tag>? Tag { get; set; }
     }
 }
